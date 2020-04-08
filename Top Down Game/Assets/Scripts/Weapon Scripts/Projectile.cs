@@ -12,6 +12,7 @@ public class Projectile : MonoBehaviour
 
     protected float damage, bulletVelocity, despawnTime;
 
+    // Name of the object, this is how the spawn will be identified in the object pooler
     protected string pName;
 
     protected Rigidbody2D rb;

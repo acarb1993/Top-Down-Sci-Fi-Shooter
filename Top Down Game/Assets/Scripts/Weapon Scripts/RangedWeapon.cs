@@ -27,11 +27,13 @@ public class RangedWeapon : MonoBehaviour
 
     void Update()
     {
+        // Timer limits the frequency at which the player can fire
         if (timer > 0) { timer -= Time.deltaTime; }
     }
 
     public void Shoot()
     {
+        // Checks if the player can fire and if the weapon has ammo
         if (timer <= 0 && CurrentAmmo > 0)
         {        
             projectile.SpawnProjectile(firePoint);
@@ -41,6 +43,7 @@ public class RangedWeapon : MonoBehaviour
             timer = fireRate;
         }
 
+        // Auto reload if the weapon is out of ammo
         if (CurrentAmmo <= 0 && !reloading) {
             Debug.Log("Reloading...");
             reloading = true;
@@ -48,6 +51,7 @@ public class RangedWeapon : MonoBehaviour
         }
     }
 
+    // Reloads this weapon
     public void Reload()
     {
         CurrentAmmo = maxAmmo;

@@ -818,9 +818,6 @@ MonoBehaviour:
     prefab: {fileID: 8055550203276413977, guid: eb6c5a6d6ff021d44b689c0d78d6a591,
       type: 3}
     size: 20
-  - objectName: Homing Missile
-    prefab: {fileID: 949927874092043903, guid: 63426911d723dbd46a296d1c5f01ae52, type: 3}
-    size: 10
 --- !u!1 &1289898903 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 216198281950767000, guid: e6d946ee1bbaaef478fc967832c47e3a,
@@ -916,7 +913,7 @@ PrefabInstance:
     - target: {fileID: 3437879979691136997, guid: e6d946ee1bbaaef478fc967832c47e3a,
         type: 3}
       propertyPath: fireRate
-      value: 2
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 3437879979691136997, guid: e6d946ee1bbaaef478fc967832c47e3a,
         type: 3}
