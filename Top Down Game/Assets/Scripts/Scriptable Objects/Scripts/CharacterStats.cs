@@ -6,9 +6,9 @@ public abstract class CharacterStats : ScriptableObject
 {
     [Header("Movement Attributes")]
     [SerializeField]
-    protected float moveSpeed;
+    protected float walkSpeed;
 
-    public float MoveSpeed { get { return moveSpeed; } }
+    public float WalkSpeed { get { return walkSpeed; } }
 
     [Header("Health Attributes")]
     [SerializeField]

@@ -7,9 +7,9 @@ public class PlayerStats : CharacterStats
 {
     [Header("Movement Attributes")]
     [SerializeField]
-    private float runSpeed;
+    private float sprintSpeed;
 
-    public float RunSpeed { get { return runSpeed; } }
+    public float SprintSpeed { get { return sprintSpeed; } }
 
     [Header("Stamina Attributes")]
     [SerializeField]
@@ -17,9 +17,9 @@ public class PlayerStats : CharacterStats
     [SerializeField]
     protected float staminaRecoveryRate;
     [SerializeField]
-    protected float runStaminaCost;
+    protected float sprintStaminaCost;
 
     public float StartingStamina { get { return startingStamina; } }
     public float StaminaRecoveryRate { get { return staminaRecoveryRate; } }
-    public float RunStaminaCost { get { return runStaminaCost; } }
+    public float SprintStaminaCost { get { return sprintStaminaCost; } }
 }

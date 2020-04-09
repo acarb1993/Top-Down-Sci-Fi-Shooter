@@ -47,6 +47,7 @@ public class Projectile : MonoBehaviour
 
     protected void Despawn()
     {
+        // Goes back into the object pooler
         gameObject.SetActive(false);
     }
 }

@@ -6,16 +6,13 @@ using UnityEngine;
 
 public class HealthComponent : MonoBehaviour, IDamageable, IKillable
 {
-    [SerializeField]
-    private float maxHealth = 100;
-
-    public float MaxHealth { get { return maxHealth; } set { maxHealth = value; } }
+    public float MaxHealth { get; set; }
     public float CurrentHealth { get; set; }
 
     // Have Awake() run so the health is always initialized for UI elements
     void Awake()
     {
-        CurrentHealth = maxHealth;
+        CurrentHealth = MaxHealth;
     }
 
     public void TakeDamage(float damage)
@@ -29,7 +26,7 @@ public class HealthComponent : MonoBehaviour, IDamageable, IKillable
     {
         CurrentHealth += restore;
 
-        if (CurrentHealth > maxHealth) { CurrentHealth = maxHealth; }
+        if (CurrentHealth > MaxHealth) { CurrentHealth = MaxHealth; }
     }
 
     public void Kill()

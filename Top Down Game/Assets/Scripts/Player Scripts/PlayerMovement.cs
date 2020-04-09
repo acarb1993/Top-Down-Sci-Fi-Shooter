@@ -5,24 +5,18 @@ public class PlayerMovement : MonoBehaviour
     // Moves the player with the Unity physics engine
     private Rigidbody2D rb;
 
-    [SerializeField]
-    private float walkSpeed = 2f;
+    public float WalkSpeed { get;  set;  }
 
-    public float WalkSpeed
-    {
-        get { return walkSpeed; }
-    }
-
-    // moveSpeed property
+    // Current speed of player
     public float MoveSpeed { get; set; }
 
-    // Moves the player
+    // Stores the player movement values
     private Vector2 movement;
 
     // Start is called before the first frame update
     void Start()
     {
-        MoveSpeed = walkSpeed;
+        MoveSpeed = WalkSpeed;
         rb = GetComponent<Rigidbody2D>();
     }
 

@@ -38,7 +38,7 @@ public class EnemyChaseBehavior : StateMachineBehaviour
             animator.transform.position = Vector2.MoveTowards
                 (animator.transform.position, 
                 playerPos.position, 
-                enemyStats.MoveSpeed * Time.deltaTime );
+                enemyStats.WalkSpeed * Time.deltaTime );
         }     
     }
 

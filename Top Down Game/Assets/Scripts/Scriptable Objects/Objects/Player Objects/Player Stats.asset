@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eadfd725a7877d141866c977d16c2840, type: 3}
   m_Name: Player Stats
   m_EditorClassIdentifier: 
-  moveSpeed: 2
-  startingHealth: 100
-  runSpeed: 5
+  walkSpeed: 2
+  startingHealth: 1000
+  sprintSpeed: 5
   startingStamina: 100
   staminaRecoveryRate: 2
-  runStaminaCost: 10
+  sprintStaminaCost: 20

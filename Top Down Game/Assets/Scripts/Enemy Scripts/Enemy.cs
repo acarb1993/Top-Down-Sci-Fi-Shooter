@@ -11,7 +11,13 @@ public class Enemy : MonoBehaviour
 
     private HealthComponent healthComponent;
 
-    void Start()
+    void Awake()
+    {
+        healthComponent = GetComponent<HealthComponent>();
+        healthComponent.MaxHealth = enemyStats.StartingHealth;
+    }
+
+    private void Start()
     {
         // Adds an enemy to a singleton on the Game Manager object in the scene
         EnemyManager.Instance.AddEnemy(this);

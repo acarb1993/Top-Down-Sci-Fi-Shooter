@@ -2,26 +2,28 @@
 
 public class PlayerSprint : MonoBehaviour
 {
+    private CharacterStatusContainer statusContainer;
+
     private StaminaComponent sc;
     private PlayerMovement pm;
 
-    [SerializeField]
-    private float sprintCost = 20f, runspeed = 5f;
+    public float SprintSpeed { get; set; }
+    public float SprintCost { get; set; }
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
+        statusContainer = GetComponent<CharacterStatusContainer>();
         sc = GetComponent<StaminaComponent>();
         pm = GetComponent<PlayerMovement>();
     }
 
-    // Update is called once per frame
-    void Update()
+    // Needs to work with the Fixed Update in movement
+    void FixedUpdate()
     {
         if(Input.GetButton("Run") && sc.CurrentStamina > 0)
         {
-            pm.MoveSpeed = runspeed;
-            sc.ReduceStamina(sprintCost);
+            pm.MoveSpeed = SprintSpeed;
+            sc.ReduceStamina(SprintCost);
         }
 
         else { pm.MoveSpeed = pm.WalkSpeed; }
