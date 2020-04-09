@@ -116,7 +116,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5342536c178fec74eb0c9db7775d1b62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 150
 --- !u!114 &477253784332538035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,7 +197,7 @@ SortingGroup:
   m_GameObject: {fileID: 4931846785176873700}
   m_Enabled: 1
   m_SortingLayerID: -2021721479
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
 --- !u!1 &5867336570379532368
 GameObject:
@@ -246,10 +245,11 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 04951810b14386e40b6b910dde514830, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
