@@ -8,6 +8,9 @@ public class Projectile : MonoBehaviour
     [SerializeField]
     protected ProjectileStats projectileStats;
 
+    [SerializeField]
+    protected ParticleSystem impact;
+
     public ProjectileStats BulletStats { get { return projectileStats; } }
 
     protected float damage, bulletVelocity, despawnTime;
@@ -36,8 +39,11 @@ public class Projectile : MonoBehaviour
         if(collider.CompareTag("Enemy") ) {
             HealthComponent enemyHealth = collider.GetComponent<HealthComponent>();
             enemyHealth.TakeDamage(damage);
-            gameObject.SetActive(false);
-        }      
+            Despawn();
+        }
+
+
+        Instantiate(impact, transform.position, transform.rotation);
     }
 
     public void SpawnProjectile(Transform spawnPoint)

@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 216198281770428670}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.057, y: 0.391, z: 0}
+  m_LocalPosition: {x: 0.057, y: 0.384, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 216198281950767003}
@@ -108,7 +108,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.014982104, y: 0.03146243}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -119,7 +119,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.6044699, y: 0.5655165}
   m_EdgeRadius: 0
 --- !u!114 &2357182090155359933
 MonoBehaviour:
@@ -158,7 +158,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5342536c178fec74eb0c9db7775d1b62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
 --- !u!114 &6909516137476794439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,8 +170,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21a0ccb7e1c650647812b3a7696b2cd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxStamina: 100
-  recoveryAmount: 2
 --- !u!114 &1577728705054842898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,7 +197,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 312d754ac482531429f3fe40d0d5e1ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 2
 --- !u!114 &2023476710610799793
 MonoBehaviour:
   m_ObjectHideFlags: 0
