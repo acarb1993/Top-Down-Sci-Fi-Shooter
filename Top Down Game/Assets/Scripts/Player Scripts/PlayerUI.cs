@@ -18,7 +18,7 @@ public class PlayerUI : MonoBehaviour
     private StaminaComponent sc;
     private WeaponContainer wc;
 
-    private void Awake()
+    private void Start()
     {
         // Root is the player gameobject, separate child object is used for UI
         hc = GetComponent<HealthComponent>();

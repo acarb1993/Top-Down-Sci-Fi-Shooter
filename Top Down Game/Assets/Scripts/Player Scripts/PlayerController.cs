@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     private PlayerMovement playerMovement;
     private PlayerSprint playerSprint;
 
+    // Set Awake to initalize components so other scripts my read the values
     void Awake()
     {
         healthComponent = GetComponent<HealthComponent>();

@@ -9,8 +9,7 @@ public class HealthComponent : MonoBehaviour, IDamageable, IKillable
     public float MaxHealth { get; set; }
     public float CurrentHealth { get; set; }
 
-    // Have Awake() run so the health is always initialized for UI elements
-    void Awake()
+    void Start()
     {
         CurrentHealth = MaxHealth;
     }

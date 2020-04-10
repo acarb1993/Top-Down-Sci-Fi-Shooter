@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e9b541e88c53274db74acfd436f9a48, type: 3}
   m_Name: Drone Stats
   m_EditorClassIdentifier: 
-  moveSpeed: 2
+  walkSpeed: 2
   startingHealth: 150
-  enemyType: 0
   attackSpeed: 2
   attackDamage: 10

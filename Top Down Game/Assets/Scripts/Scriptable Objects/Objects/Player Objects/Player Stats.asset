@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Player Stats
   m_EditorClassIdentifier: 
   walkSpeed: 2
-  startingHealth: 1000
+  startingHealth: 100
   sprintSpeed: 5
   startingStamina: 100
   staminaRecoveryRate: 2

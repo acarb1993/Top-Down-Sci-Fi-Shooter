@@ -9,8 +9,7 @@ public class StaminaComponent : MonoBehaviour
     public float RecoveryAmount { get; set;  }
     public float CurrentStamina { get; set; }
 
-    // Have Awake() run so the stamina is always initialized for UI elements
-    void Awake()
+    void Start()
     {
         CurrentStamina = MaxStamina;
     }
