@@ -163,7 +163,7 @@ Transform:
   m_Children:
   - {fileID: 799116497}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
@@ -259,7 +259,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &799116496
 GameObject:
@@ -851,7 +851,7 @@ PrefabInstance:
     - target: {fileID: 216198281950767003, guid: e6d946ee1bbaaef478fc967832c47e3a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 216198281950767003, guid: e6d946ee1bbaaef478fc967832c47e3a,
         type: 3}
@@ -922,75 +922,6 @@ PrefabInstance:
     - {fileID: 1556791234355896582, guid: e6d946ee1bbaaef478fc967832c47e3a, type: 3}
     - {fileID: 8886192594552584861, guid: e6d946ee1bbaaef478fc967832c47e3a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e6d946ee1bbaaef478fc967832c47e3a, type: 3}
---- !u!1001 &1327491458
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 7011091713025948093, guid: e48b9e03f4b4aba4aa640bbdf68b7e7d,
-        type: 3}
-      propertyPath: m_Name
-      value: Laser Particle
-      objectReference: {fileID: 0}
-    - target: {fileID: 7011091713025948094, guid: e48b9e03f4b4aba4aa640bbdf68b7e7d,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.0495735
-      objectReference: {fileID: 0}
-    - target: {fileID: 7011091713025948094, guid: e48b9e03f4b4aba4aa640bbdf68b7e7d,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 4.44
-      objectReference: {fileID: 0}
-    - target: {fileID: 7011091713025948094, guid: e48b9e03f4b4aba4aa640bbdf68b7e7d,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7011091713025948094, guid: e48b9e03f4b4aba4aa640bbdf68b7e7d,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7011091713025948094, guid: e48b9e03f4b4aba4aa640bbdf68b7e7d,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7011091713025948094, guid: e48b9e03f4b4aba4aa640bbdf68b7e7d,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7011091713025948094, guid: e48b9e03f4b4aba4aa640bbdf68b7e7d,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7011091713025948094, guid: e48b9e03f4b4aba4aa640bbdf68b7e7d,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7011091713025948094, guid: e48b9e03f4b4aba4aa640bbdf68b7e7d,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7011091713025948094, guid: e48b9e03f4b4aba4aa640bbdf68b7e7d,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7011091713025948094, guid: e48b9e03f4b4aba4aa640bbdf68b7e7d,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e48b9e03f4b4aba4aa640bbdf68b7e7d, type: 3}
 --- !u!1001 &1674987760
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1041,7 +972,7 @@ PrefabInstance:
     - target: {fileID: 852180956057379131, guid: 59894cb030bbddd4ca78f099fd2b052e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 852180956057379131, guid: 59894cb030bbddd4ca78f099fd2b052e,
         type: 3}

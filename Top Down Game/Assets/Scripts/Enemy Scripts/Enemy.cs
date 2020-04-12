@@ -22,9 +22,4 @@ public class Enemy : MonoBehaviour
         // Adds an enemy to a singleton on the Game Manager object in the scene
         EnemyManager.Instance.AddEnemy(this);
     }
-
-    void Update()
-    {
-
-    }
 }
