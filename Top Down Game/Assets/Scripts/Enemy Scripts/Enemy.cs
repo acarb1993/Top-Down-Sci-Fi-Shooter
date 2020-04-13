@@ -6,18 +6,17 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField]
-    private EnemyStats enemyStats;
+    [SerializeField] private EnemyStats enemyStats;
 
     private HealthComponent healthComponent;
 
-    void Awake()
+    protected virtual void Awake()
     {
         healthComponent = GetComponent<HealthComponent>();
         healthComponent.MaxHealth = enemyStats.StartingHealth;
     }
 
-    private void Start()
+    protected virtual void Start()
     {
         // Adds an enemy to a singleton on the Game Manager object in the scene
         EnemyManager.Instance.AddEnemy(this);
