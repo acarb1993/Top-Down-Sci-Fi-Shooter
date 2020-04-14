@@ -1,8 +1,12 @@
 ﻿using System.Collections.Generic;
 using System;
+using UnityEngine;
 
 public class Drone : Enemy
 {
+
+    [SerializeField] private Transform wanderPoints;
+
     private StateMachine stateMachine;
     private Dictionary<Type, State> states;
 
@@ -17,11 +21,6 @@ public class Drone : Enemy
         base.Start();
     }
 
-    void Update()
-    {
-        //stateMachine.TickState();
-    }
-
     private void InitalizeStates()
     {
         // Needs to have this component for AI behavior
@@ -29,7 +28,7 @@ public class Drone : Enemy
 
         states = new Dictionary<Type, State>()
         {
-            { typeof(WanderState), new WanderState(gameObject) }
+            { typeof(WanderState), new WanderState(gameObject, wanderPoints) }
         };
 
         stateMachine.InitalizeStates(states);

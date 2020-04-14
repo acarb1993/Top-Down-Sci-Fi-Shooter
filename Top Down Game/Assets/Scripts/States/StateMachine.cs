@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class StateMachine : MonoBehaviour
 {
-    // States will be looked up by their class type
+    // States will be looked up by their class type, all should be inherited from State
     private Dictionary<Type, State> availableStates;
     public State CurrentState { get; private set; }
 
@@ -30,6 +30,7 @@ public class StateMachine : MonoBehaviour
         }
     }
 
+    // Initalizes states in another script for use
     public void InitalizeStates(Dictionary<Type, State> states)
     {
         availableStates = states;
