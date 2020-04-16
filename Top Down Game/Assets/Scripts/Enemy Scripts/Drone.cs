@@ -10,9 +10,8 @@ public class Drone : Enemy
     private StateMachine stateMachine;
     private Dictionary<Type, State> states;
 
-    protected override void Awake()
+    private void Awake()
     {
-        base.Awake();
         InitalizeStates();
     }
 

@@ -2,30 +2,17 @@
 
 public class PlayerSprint : MonoBehaviour
 {
-    private CharacterStatusContainer statusContainer;
-
-    private StaminaComponent sc;
-    private PlayerMovement pm;
-
-    public float SprintSpeed { get; set; }
-    public float SprintCost { get; set; }
-
-    void Awake()
-    {
-        statusContainer = GetComponent<CharacterStatusContainer>();
-        sc = GetComponent<StaminaComponent>();
-        pm = GetComponent<PlayerMovement>();
-    }
+    [SerializeField] private FloatVariable stamina, playerSpeed, sprintSpeed, sprintCost;
 
     // Needs to work with the Fixed Update in movement
     void FixedUpdate()
     {
-        if(Input.GetButton("Run") && sc.CurrentStamina > 0)
+        if(Input.GetButton("Run") && stamina.RuntimeValue > 0)
         {
-            pm.MoveSpeed = SprintSpeed;
-            sc.ReduceStamina(SprintCost);
+            playerSpeed.RuntimeValue = sprintSpeed.RuntimeValue;
+            stamina.RuntimeValue -= sprintCost.RuntimeValue * Time.deltaTime;
         }
 
-        else { pm.MoveSpeed = pm.WalkSpeed; }
+        else { playerSpeed.RuntimeValue = playerSpeed.InitialValue; }
     }
 }

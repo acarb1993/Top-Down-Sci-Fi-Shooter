@@ -41,7 +41,6 @@ GameObject:
   - component: {fileID: 216198281950767003}
   - component: {fileID: 216198281950767002}
   - component: {fileID: 216198281950767007}
-  - component: {fileID: 2357182090155359933}
   - component: {fileID: 216198281950767004}
   - component: {fileID: 1932822090613383684}
   - component: {fileID: 6909516137476794439}
@@ -121,19 +120,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6044699, y: 0.5655165}
   m_EdgeRadius: 0
---- !u!114 &2357182090155359933
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 216198281950767000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06efb23f5698f2546994d24d4d5325a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerStats: {fileID: 11400000, guid: 03355d8b51e3dff4c8610e69ed5eedfd, type: 2}
 --- !u!114 &216198281950767004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,6 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5342536c178fec74eb0c9db7775d1b62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  floatVariable: {fileID: 11400000, guid: 9657d822206cff84bbcaced7a526225a, type: 2}
 --- !u!114 &6909516137476794439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,6 +157,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21a0ccb7e1c650647812b3a7696b2cd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stamina: {fileID: 11400000, guid: 6c08d712003ab254dae224b9b246478a, type: 2}
+  recoveryAmount: 2
 --- !u!114 &1577728705054842898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,6 +174,8 @@ MonoBehaviour:
   radialHealthBar: {fileID: 7676702534401183259}
   radialStaminaBar: {fileID: 4056713723338703437}
   ammoCounter: {fileID: 8828724014726559001}
+  playerHealth: {fileID: 11400000, guid: 9657d822206cff84bbcaced7a526225a, type: 2}
+  playerStamina: {fileID: 11400000, guid: 6c08d712003ab254dae224b9b246478a, type: 2}
 --- !u!114 &9179640774224437411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -197,6 +188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 312d754ac482531429f3fe40d0d5e1ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerSpeed: {fileID: 11400000, guid: 6adcbfd3a6e344746b9c12865edbbc9e, type: 2}
 --- !u!114 &2023476710610799793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -209,6 +201,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f15d00fc7843e364697efb2620cfa4c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stamina: {fileID: 11400000, guid: 6c08d712003ab254dae224b9b246478a, type: 2}
+  playerSpeed: {fileID: 11400000, guid: 6adcbfd3a6e344746b9c12865edbbc9e, type: 2}
+  sprintSpeed: {fileID: 11400000, guid: 44bda375b639f8449bd4c4d9c6a9743e, type: 2}
+  sprintCost: {fileID: 11400000, guid: e1a46647393f59a4cbf117a0262b2273, type: 2}
 --- !u!114 &8269343495423268990
 MonoBehaviour:
   m_ObjectHideFlags: 0

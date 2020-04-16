@@ -97,6 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5342536c178fec74eb0c9db7775d1b62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  floatVariable: {fileID: 11400000, guid: 46263dd8fceb5d149a7a0ceadf296248, type: 2}
 --- !u!114 &-3008988488807437472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,6 +138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyStats: {fileID: 11400000, guid: c3d8b651c13bfcd4b8fc9d35cf1b263d, type: 2}
+  wanderPoints: {fileID: 0}
 --- !u!114 &9123081621085138216
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -6,26 +6,23 @@ using UnityEngine;
 
 public class HealthComponent : MonoBehaviour, IDamageable, IKillable
 {
-    public float MaxHealth { get; set; }
-    public float CurrentHealth { get; set; }
+    /*public float MaxHealth { get; set; }
+    public float CurrentHealth { get; set; }*/
 
-    void Start()
-    {
-        CurrentHealth = MaxHealth;
-    }
+    [SerializeField] private FloatVariable floatVariable;
 
     public void TakeDamage(float damage)
     {
-        CurrentHealth -= damage;
+        floatVariable.RuntimeValue -= damage;
 
-        if (CurrentHealth <= 0) { Kill(); }
+        if (floatVariable.RuntimeValue <= 0) { Kill(); }
     }
 
     public void RestoreHealth(float restore)
     {
-        CurrentHealth += restore;
+        floatVariable.RuntimeValue += restore;
 
-        if (CurrentHealth > MaxHealth) { CurrentHealth = MaxHealth; }
+        if (floatVariable.RuntimeValue > floatVariable.InitialValue) { floatVariable.RuntimeValue = floatVariable.InitialValue; }
     }
 
     public void Kill()

@@ -14,21 +14,15 @@ public class PlayerUI : MonoBehaviour
     [SerializeField]
     private Text ammoCounter;
 
-    private HealthComponent hc;
-    private StaminaComponent sc;
-    private WeaponContainer wc;
+    [SerializeField]
+    FloatVariable playerHealth, playerStamina;
+
+    private WeaponContainer weaponContainer;
 
     private void Start()
     {
-        // Root is the player gameobject, separate child object is used for UI
-        hc = GetComponent<HealthComponent>();
-        if (hc == null) { Debug.Log("No HealthComponent found in UI"); }
-
-        sc = GetComponent<StaminaComponent>();
-        if (sc == null) { Debug.Log("No StaminaComponent found in UI"); }
-
-        wc = transform.Find("Weapon Container").gameObject.GetComponent<WeaponContainer>(); ;
-        if (wc == null) { Debug.Log("No Weapon Container found in UI"); }
+        weaponContainer = transform.Find("Weapon Container").gameObject.GetComponent<WeaponContainer>(); ;
+        if (weaponContainer == null) { Debug.Log("No Weapon Container found in UI"); }
 
         if (radialHealthBar == null) { Debug.Log("Player missing Health Bar UI"); }
 
@@ -39,16 +33,16 @@ public class PlayerUI : MonoBehaviour
 
     void Update()
     {
-        radialHealthBar.fillAmount = hc.CurrentHealth / 100;
+        radialHealthBar.fillAmount = playerHealth.RuntimeValue / 100;
 
-        if (hc.CurrentHealth <= hc.MaxHealth * 0.50 && hc.CurrentHealth > hc.MaxHealth * 0.20)
+        if (playerHealth.RuntimeValue <= playerHealth.InitialValue * 0.50 && playerHealth.RuntimeValue > playerHealth.InitialValue * 0.20)
             radialHealthBar.GetComponent<Image>().color = Color.yellow;
 
-        else if (hc.CurrentHealth <= hc.MaxHealth * 0.20)
+        else if (playerHealth.RuntimeValue <= playerHealth.InitialValue * 0.20)
             radialHealthBar.GetComponent<Image>().color = Color.red;
 
-        radialStaminaBar.fillAmount = sc.CurrentStamina / 100;
+        radialStaminaBar.fillAmount = playerStamina.RuntimeValue / 100;
 
-        ammoCounter.text = wc.GetWeaponAtIndex(0).GetComponent<RangedWeapon>().CurrentAmmo.ToString();
+        ammoCounter.text = weaponContainer.GetWeaponAtIndex(0).GetComponent<RangedWeapon>().CurrentAmmo.ToString();
     }
 }
