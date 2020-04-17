@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe1e65583f45d5241bf2c33caa7b5033, type: 3}
   m_Name: DroneHealth
   m_EditorClassIdentifier: 
-  InitialValue: 200
+  InitialValue: 50

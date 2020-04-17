@@ -11,6 +11,7 @@ public class StateMachine : MonoBehaviour
     private Dictionary<Type, State> availableStates;
     public State CurrentState { get; private set; }
 
+    // Update will check for state changes and execute those states
     private void Update()
     {
         // Sets state to first available state by default

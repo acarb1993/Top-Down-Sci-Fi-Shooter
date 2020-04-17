@@ -4,7 +4,7 @@
 
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public abstract class Enemy : MonoBehaviour
 {
     [SerializeField] private EnemyStats enemyStats;
 
@@ -15,4 +15,7 @@ public class Enemy : MonoBehaviour
         // Adds an enemy to a singleton on the Game Manager object in the scene
         EnemyManager.Instance.AddEnemy(this);
     }
+
+    // Every enemy has an AI. This makes sure each enemy has states it should be initalized with.
+    protected abstract void InitalizeStates();
 }

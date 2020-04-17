@@ -8,12 +8,14 @@ public abstract class State
     protected GameObject character;
     protected Rigidbody2D rb;
 
+    // Takes in the object that this state is controlling
     public State(GameObject gameObject)
     {
         character = gameObject;
         rb = character.GetComponent<Rigidbody2D>();
     }
 
-    // Tick should be called in Update() this is what the object is doing in the current state
+    /* Tick should be called in Update() this is what the object is doing in the current state
+     * this also returns either the state it's already in or another state based on conditions within that state */
     public abstract Type Tick();
 }

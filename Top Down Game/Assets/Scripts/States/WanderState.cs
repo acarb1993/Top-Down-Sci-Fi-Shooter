@@ -6,14 +6,22 @@ using UnityEngine;
 
 public class WanderState : State
 {
+    private FloatVariable droneSpeed;
+    private EnemyAggro aggro;
+
+    // List of points where the AI will travel
     private List<Transform> wanderPoints;
+    // The current point the AI is travelling to
     private Transform pointToTravel;
     private int numberOfPoints;
     private float waitTime, timer;
 
-    public WanderState(GameObject gameObject, Transform wp) : base(gameObject)
+    public WanderState(GameObject gameObject, Transform wp, FloatVariable ds) : base(gameObject)
     {
         wanderPoints = new List<Transform>();
+        droneSpeed = ds;
+
+        aggro = character.GetComponent<EnemyAggro>();
 
         // Get each point from the passed in wp gameObject. These are the wander points the AI can go to
         foreach(Transform point in wp.transform)
@@ -24,25 +32,33 @@ public class WanderState : State
         numberOfPoints = wanderPoints.Count;
 
         waitTime = 5;
-        timer = 5;
+        timer = waitTime;
     }
 
     public override Type Tick()
     {
+        // if target is within range
+        if(aggro.isInRange)
+        {
+            return typeof(ChaseState);
+        }
+        // return typeof(ChaseState)
+
         if(timer >= waitTime)
         {
-            // This is what point the AI will travel to
-            pointToTravel = wanderPoints[UnityEngine.Random.Range(0, numberOfPoints)];
+            int pointIndex = UnityEngine.Random.Range(0, numberOfPoints);
+
+            pointToTravel = wanderPoints[pointIndex];
 
             timer = 0;
         }
 
         // Will move towards the random target that is picked
-        // TODO take away hard coding of speed
+        // TODO this should be called in the FixedUpdate of state machine
         character.transform.position = Vector2.MoveTowards(
                 character.transform.position,
                 pointToTravel.position,
-                2 * Time.deltaTime);
+                droneSpeed.RuntimeValue * Time.deltaTime);
 
         timer += Time.deltaTime;
 

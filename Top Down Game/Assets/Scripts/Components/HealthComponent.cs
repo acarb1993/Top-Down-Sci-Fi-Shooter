@@ -6,9 +6,6 @@ using UnityEngine;
 
 public class HealthComponent : MonoBehaviour, IDamageable, IKillable
 {
-    /*public float MaxHealth { get; set; }
-    public float CurrentHealth { get; set; }*/
-
     [SerializeField] private FloatVariable floatVariable;
 
     public void TakeDamage(float damage)
