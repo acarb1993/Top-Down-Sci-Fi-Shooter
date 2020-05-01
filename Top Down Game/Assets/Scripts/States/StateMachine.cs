@@ -1,5 +1,4 @@
 ﻿/* Controls the AI of the game as it shifts to different states based on certain conditions */
-
 using System.Collections.Generic;
 using System;
 using System.Linq;
@@ -29,6 +28,11 @@ public class StateMachine : MonoBehaviour
         {
             SwitchStates(nextState);
         }
+    }
+
+    void FixedUpdate()
+    {
+        CurrentState?.FixedTick();
     }
 
     // Initalizes states in another script for use

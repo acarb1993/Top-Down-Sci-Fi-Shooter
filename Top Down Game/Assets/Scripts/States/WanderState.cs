@@ -1,5 +1,4 @@
 ﻿/* Will move NPC's into random directions or perhaps along a path */
-
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,7 +20,7 @@ public class WanderState : State
         wanderPoints = new List<Transform>();
         droneSpeed = ds;
 
-        aggro = character.GetComponent<EnemyAggro>();
+        aggro = referencedObject.GetComponent<EnemyAggro>();
 
         // Get each point from the passed in wp gameObject. These are the wander points the AI can go to
         foreach(Transform point in wp.transform)
@@ -42,9 +41,8 @@ public class WanderState : State
         {
             return typeof(ChaseState);
         }
-        // return typeof(ChaseState)
 
-        if(timer >= waitTime)
+        if (timer >= waitTime)
         {
             int pointIndex = UnityEngine.Random.Range(0, numberOfPoints);
 
@@ -52,16 +50,17 @@ public class WanderState : State
 
             timer = 0;
         }
-
-        // Will move towards the random target that is picked
-        // TODO this should be called in the FixedUpdate of state machine
-        character.transform.position = Vector2.MoveTowards(
-                character.transform.position,
-                pointToTravel.position,
-                droneSpeed.RuntimeValue * Time.deltaTime);
-
+       
         timer += Time.deltaTime;
 
         return typeof(WanderState);
+    }
+
+    public override void FixedTick()
+    {
+        referencedObject.transform.position = Vector2.MoveTowards(
+               referencedObject.transform.position,
+               pointToTravel.position,
+               droneSpeed.RuntimeValue * Time.deltaTime);
     }
 }

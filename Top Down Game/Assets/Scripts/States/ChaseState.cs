@@ -13,7 +13,8 @@ public class ChaseState : State
         // TODO may want to have other targets besides the player
         droneSpeed = ds;
 
-        enemyAggro = character.GetComponent<EnemyAggro>();
+        enemyAggro = referencedObject.GetComponent<EnemyAggro>();
+        // If the player is in range, will asign as a target
         enemyAggro.OnPlayerInRange += AssignTarget;
     }
 
@@ -24,20 +25,23 @@ public class ChaseState : State
             return typeof(WanderState);
         }
 
+        return typeof(ChaseState);
+    }
+
+    public override void FixedTick()
+    {
         // Chase the target
-        Vector2 targetDirection = chaseTarget.transform.position - character.transform.position;
+        Vector2 targetDirection = chaseTarget.transform.position - referencedObject.transform.position;
         float angle = Mathf.Atan2(targetDirection.y, targetDirection.x) * Mathf.Rad2Deg;
         rb.rotation = angle;
         targetDirection.Normalize();
         movement = targetDirection;
         Chase(movement);
-
-        return typeof(ChaseState);
     }
 
     private void Chase(Vector2 direction)
     {
-        Vector2 position = character.transform.position;
+        Vector2 position = referencedObject.transform.position;
         rb.MovePosition(position + (direction * droneSpeed.RuntimeValue * Time.deltaTime));
     }
 
