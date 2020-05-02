@@ -5,7 +5,7 @@ public class ChaseState : State
 {
     private EnemyAggro enemyAggro;
 
-    public ChaseState(GameObject gameObject, FloatVariable ds) : base(gameObject)
+    public ChaseState(GameObject gameObject) : base(gameObject)
     {
         enemyAggro = base.gameObject.GetComponent<EnemyAggro>();
     }

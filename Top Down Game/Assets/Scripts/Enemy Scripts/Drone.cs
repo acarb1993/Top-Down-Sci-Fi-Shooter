@@ -5,7 +5,6 @@ using UnityEngine;
 public class Drone : Enemy
 {
     [SerializeField] private Transform wanderPoints;
-    [SerializeField] private FloatVariable droneSpeed;
 
     private StateMachine stateMachine;
     private Dictionary<Type, State> states;
@@ -24,8 +23,8 @@ public class Drone : Enemy
 
         states = new Dictionary<Type, State>()
         {
-            { typeof(WanderState), new WanderState(gameObject, wanderPoints, droneSpeed) },
-            { typeof(ChaseState), new ChaseState(gameObject, droneSpeed) }
+            { typeof(WanderState), new WanderState(gameObject, wanderPoints) },
+            { typeof(ChaseState), new ChaseState(gameObject) }
         };
 
         stateMachine.InitalizeStates(states);

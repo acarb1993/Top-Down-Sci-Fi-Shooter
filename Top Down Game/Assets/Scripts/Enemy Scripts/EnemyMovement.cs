@@ -7,12 +7,13 @@ public class EnemyMovement : MonoBehaviour
     // Where the enemy is moving to
     private Transform target;
     private Rigidbody2D rb2d;
-    private float moveSpeed;
+    private float moveSpeed, offset;
 
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
         moveSpeed = floatVariable.RuntimeValue;
+        offset = 90;
     }
 
     private void Update()
@@ -39,7 +40,6 @@ public class EnemyMovement : MonoBehaviour
 
     private void FaceTarget()
     {
-        float offset = 90;
         Vector2 direction = transform.position - target.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + offset;
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);

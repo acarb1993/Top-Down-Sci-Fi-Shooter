@@ -18,7 +18,7 @@ public class WanderState : State
     private int numberOfPoints;
     private float timer;
 
-    public WanderState(GameObject gameObject, Transform wp, FloatVariable ds) : base(gameObject)
+    public WanderState(GameObject gameObject, Transform wp) : base(gameObject)
     {
         wanderPoints = new List<Transform>();
 
@@ -41,6 +41,7 @@ public class WanderState : State
         // if target is within range
         if(aggro.isInRange)
         {
+            // Make the new target the player
             enemyMovement.UpdateTarget(PlayerManager.Instance.Player.transform);
             return typeof(ChaseState);
         }

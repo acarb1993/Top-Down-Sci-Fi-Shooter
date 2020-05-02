@@ -8,10 +8,6 @@ public class EnemyAggro : MonoBehaviour
 
     private GameObject player;
 
-    // Event will fire if a target is in range
-    public delegate void InRange();
-    public event InRange OnPlayerInRange;
-
     public bool isInRange = false;
 
     void Start()
@@ -28,8 +24,6 @@ public class EnemyAggro : MonoBehaviour
         if(distanceToPlayer <= aggroDist)
         {
             isInRange = true;
-            // Checks if null before invoking, otherwise you get weird behaviour (Like null references)
-            OnPlayerInRange?.Invoke();
         }
 
         // If the player is in range, checks if the player runs far enough away is disengage
