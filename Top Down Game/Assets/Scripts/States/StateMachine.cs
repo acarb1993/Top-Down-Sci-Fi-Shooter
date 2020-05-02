@@ -11,11 +11,6 @@ public class StateMachine : MonoBehaviour
     // The active state in the machine being processed
     public State CurrentState { get; private set; }
 
-    private void Start()
-    {
-
-    }
-
     // Update will check for state changes and execute those states
     private void Update()
     {
