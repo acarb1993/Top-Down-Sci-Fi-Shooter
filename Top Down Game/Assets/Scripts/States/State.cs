@@ -4,19 +4,15 @@ using UnityEngine;
 
 public abstract class State
 {
-    protected GameObject referencedObject;
-    protected Rigidbody2D rb;
+    protected GameObject gameObject;
 
     // Takes in the object that this state is controlling
-    public State(GameObject gameObject)
+    public State(GameObject go)
     {
-        referencedObject = gameObject;
-        rb = referencedObject.GetComponent<Rigidbody2D>();
+        gameObject = go;
     }
 
     /* Tick should be called in Update() this is what the object is doing in the current state
      * this also returns either the state it's already in or another state based on conditions within that state */
     public abstract Type Tick();
-    // Used for physics movement in a state.
-    public virtual void FixedTick() { }
 }

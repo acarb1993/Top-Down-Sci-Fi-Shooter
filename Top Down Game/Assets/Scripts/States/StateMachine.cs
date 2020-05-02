@@ -8,7 +8,13 @@ public class StateMachine : MonoBehaviour
 {
     // States will be looked up by their class type, all should be inherited from State
     private Dictionary<Type, State> availableStates;
+    // The active state in the machine being processed
     public State CurrentState { get; private set; }
+
+    private void Start()
+    {
+
+    }
 
     // Update will check for state changes and execute those states
     private void Update()
@@ -30,11 +36,6 @@ public class StateMachine : MonoBehaviour
         }
     }
 
-    void FixedUpdate()
-    {
-        CurrentState?.FixedTick();
-    }
-
     // Initalizes states in another script for use
     public void InitalizeStates(Dictionary<Type, State> states)
     {
@@ -43,6 +44,7 @@ public class StateMachine : MonoBehaviour
 
     private void SwitchStates(Type nextState)
     {
+
         CurrentState = availableStates[nextState];
     }
 }

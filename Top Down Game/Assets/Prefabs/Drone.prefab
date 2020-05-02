@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 852180956057379130}
   - component: {fileID: 852180956057379133}
   - component: {fileID: 3315008239524301388}
-  - component: {fileID: -3008988488807437472}
   - component: {fileID: 841006199456656077}
   - component: {fileID: 5704972260979641844}
   - component: {fileID: 9123081621085138216}
   - component: {fileID: 9031944191280377936}
+  - component: {fileID: 6294010634249505791}
   m_Layer: 0
   m_Name: Drone
   m_TagString: Enemy
@@ -99,21 +99,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   floatVariable: {fileID: 11400000, guid: 46263dd8fceb5d149a7a0ceadf296248, type: 2}
---- !u!114 &-3008988488807437472
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 852180956057379129}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8a6f8108dd36994ea5152c2ccaf9dc4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cooldown: 3
-  damage: 10
-  range: 2
 --- !u!114 &841006199456656077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,6 +151,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aggroDist: 2
+  disengageDist: 10
+  isInRange: 0
+--- !u!114 &6294010634249505791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 852180956057379129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc8cdf26d8c4c7047b236c87e054c72c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floatVariable: {fileID: 11400000, guid: 157f2e52fe23830458a403e3bb944e58, type: 2}
 --- !u!1 &4931846785176873700
 GameObject:
   m_ObjectHideFlags: 0

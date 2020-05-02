@@ -5,11 +5,9 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class Projectile : MonoBehaviour
 {
-    [SerializeField]
-    protected ProjectileStats projectileStats;
+    [SerializeField] protected ProjectileStats projectileStats;
 
-    [SerializeField]
-    protected GameObject impact;
+    [SerializeField] protected GameObject impact;
 
     public ProjectileStats BulletStats { get { return projectileStats; } }
 
