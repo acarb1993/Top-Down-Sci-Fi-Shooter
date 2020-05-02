@@ -165,4 +165,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileStats: {fileID: 11400000, guid: 3072702b28592114992ee3dd6dacf0ce, type: 2}
-  impact: {fileID: 7011091713025948094, guid: e48b9e03f4b4aba4aa640bbdf68b7e7d, type: 3}
+  impact: {fileID: 7011091713025948093, guid: e48b9e03f4b4aba4aa640bbdf68b7e7d, type: 3}

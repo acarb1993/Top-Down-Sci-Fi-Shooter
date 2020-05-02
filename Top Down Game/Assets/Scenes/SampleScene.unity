@@ -237,7 +237,8 @@ PrefabInstance:
       propertyPath: wanderPoints
       value: 
       objectReference: {fileID: 2077526746}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -3008988488807437472, guid: 59894cb030bbddd4ca78f099fd2b052e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 59894cb030bbddd4ca78f099fd2b052e, type: 3}
 --- !u!1 &519420028
 GameObject:
