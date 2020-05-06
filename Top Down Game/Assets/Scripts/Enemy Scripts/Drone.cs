@@ -23,7 +23,7 @@ public class Drone : Enemy
 
         states = new Dictionary<Type, State>()
         {
-            { typeof(WanderState), new WanderState(gameObject, wanderPoints) },
+            { typeof(WanderState), new WanderState(gameObject) },
             { typeof(ChaseState), new ChaseState(gameObject) }
         };
 

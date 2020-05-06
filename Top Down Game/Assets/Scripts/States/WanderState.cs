@@ -1,65 +1,54 @@
-﻿/* Will move NPC's into random directions or perhaps along a path */
+﻿/* Will move NPC's into random directions */
 using System;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class WanderState : State
 {
-    // How long to wait before traveling to a different point
-    [SerializeField] private float waitTime = 5;
+    private Vector3 startingPosition;
+    private Vector3 roamPosition;
 
-    private EnemyAggro aggro;
+    private EnemyAggro enemyAggro;
     private EnemyMovement enemyMovement;
 
-    // List of points where the AI will travel
-    private List<Transform> wanderPoints;
-    // The current point the AI is travelling to
-    private Transform pointToTravel;
-    private int numberOfPoints;
-    private float timer;
-
-    public WanderState(GameObject gameObject, Transform wp) : base(gameObject)
+    public WanderState(GameObject gameObject) : base(gameObject)
     {
-        wanderPoints = new List<Transform>();
+        startingPosition = gameObject.transform.position;
+        roamPosition = GetRoamingPosition();
 
-        aggro = base.gameObject.GetComponent<EnemyAggro>();
-        enemyMovement = base.gameObject.GetComponent<EnemyMovement>();
+        enemyAggro = gameObject.GetComponent<EnemyAggro>();
+        enemyMovement = gameObject.GetComponent<EnemyMovement>();
 
-        // Get each point from the passed in wp gameObject. These are the wander points the AI can go to
-        foreach(Transform point in wp.transform)
-        {
-            wanderPoints.Add(point);
-        }
-
-        numberOfPoints = wanderPoints.Count;
-
-        timer = waitTime;
+        enemyMovement.UpdateTarget(roamPosition);
     }
 
     public override Type Tick()
     {
-        // if target is within range
-        if(aggro.isInRange)
+        float reachedPointDistance = 1f;
+        if(Vector3.Distance(gameObject.transform.position, roamPosition) < reachedPointDistance)
         {
-            // Make the new target the player
-            enemyMovement.UpdateTarget(PlayerManager.Instance.Player.transform);
+            roamPosition = GetRoamingPosition();
+            enemyMovement.UpdateTarget(roamPosition);
+            
+        }
+
+        // if target is within range
+        if(enemyAggro.isInRange)
+        {
             return typeof(ChaseState);
         }
 
-        if (timer >= waitTime)
-        {
-            // Select a random point to move to
-            int pointIndex = UnityEngine.Random.Range(0, numberOfPoints);
-
-            pointToTravel = wanderPoints[pointIndex];
-
-            enemyMovement.UpdateTarget(pointToTravel);
-
-            timer = 0;
-        }
-       
-        timer += Time.deltaTime;
-
         return typeof(WanderState);
+    }
+    
+    // Get a direction of where the unit will walk to
+    private Vector3 GetRandomDirection()
+    {
+        return new Vector3(UnityEngine.Random.Range(-1f, 1f), UnityEngine.Random.Range(-1f, 1f)).normalized;
+    }
+
+    // Get a position the unit will travel to
+    private Vector3 GetRoamingPosition()
+    {
+        return startingPosition + GetRandomDirection() * UnityEngine.Random.Range(1f, 5f);
     }
 }

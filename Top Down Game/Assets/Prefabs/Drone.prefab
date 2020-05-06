@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 852180956057379130}
   - component: {fileID: 852180956057379133}
   - component: {fileID: 3315008239524301388}
-  - component: {fileID: 841006199456656077}
   - component: {fileID: 5704972260979641844}
   - component: {fileID: 9123081621085138216}
   - component: {fileID: 9031944191280377936}
@@ -99,18 +98,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   floatVariable: {fileID: 11400000, guid: 46263dd8fceb5d149a7a0ceadf296248, type: 2}
---- !u!114 &841006199456656077
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 852180956057379129}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93f11a47de6f877488545caeeffff815, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &5704972260979641844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,7 +112,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyStats: {fileID: 11400000, guid: c3d8b651c13bfcd4b8fc9d35cf1b263d, type: 2}
   wanderPoints: {fileID: 0}
-  droneSpeed: {fileID: 11400000, guid: 157f2e52fe23830458a403e3bb944e58, type: 2}
 --- !u!114 &9123081621085138216
 MonoBehaviour:
   m_ObjectHideFlags: 0
