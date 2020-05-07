@@ -4,31 +4,32 @@ using UnityEngine;
 
 public class WanderState : State
 {
-    private Vector3 startingPosition;
-    private Vector3 roamPosition;
-
     private EnemyAggro enemyAggro;
     private EnemyMovement enemyMovement;
 
+    private Vector3 startingPosition;
+    private Vector3 roamPosition;
+
     public WanderState(GameObject gameObject) : base(gameObject)
     {
-        startingPosition = gameObject.transform.position;
-        roamPosition = GetRoamingPosition();
-
         enemyAggro = gameObject.GetComponent<EnemyAggro>();
         enemyMovement = gameObject.GetComponent<EnemyMovement>();
 
-        enemyMovement.UpdateTarget(roamPosition);
+        startingPosition = enemyMovement.StartPosition;
+        roamPosition = GetRoamingPosition();
+
+        enemyMovement.TargetPosition = roamPosition;
     }
 
     public override Type Tick()
     {
         float reachedPointDistance = 1f;
-        if(Vector3.Distance(gameObject.transform.position, roamPosition) < reachedPointDistance)
+        float distanceToTarget = Vector3.Distance(gameObject.transform.position, enemyMovement.TargetPosition);
+
+        if(distanceToTarget < reachedPointDistance)
         {
             roamPosition = GetRoamingPosition();
-            enemyMovement.UpdateTarget(roamPosition);
-            
+            enemyMovement.TargetPosition = roamPosition;
         }
 
         // if target is within range
