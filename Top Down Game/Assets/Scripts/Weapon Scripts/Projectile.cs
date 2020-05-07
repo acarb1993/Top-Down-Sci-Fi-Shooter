@@ -36,12 +36,12 @@ public class Projectile : MonoBehaviour
     {
         if(collider.CompareTag("Enemy") ) {
             HealthComponent enemyHealth = collider.GetComponent<HealthComponent>();
-            enemyHealth.TakeDamage(damage);
-            Despawn();
+            enemyHealth.TakeDamage(damage); 
         }
 
         GameObject particle = Instantiate(impact, transform.position, transform.rotation);
         Destroy(particle, 3);
+        Despawn();
     }
 
     public void SpawnProjectile(Transform spawnPoint)

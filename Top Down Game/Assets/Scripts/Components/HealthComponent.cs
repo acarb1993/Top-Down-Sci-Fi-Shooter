@@ -1,8 +1,6 @@
 ﻿/* Gives any character in the game Health, allows the character to take damage and be
  * hit by attacks and abilities.
  */
-
-using System.Collections;
 using UnityEngine;
 
 public class HealthComponent : MonoBehaviour, IDamageable, IKillable
@@ -14,9 +12,7 @@ public class HealthComponent : MonoBehaviour, IDamageable, IKillable
     {
         floatVariable.RuntimeValue -= damage;
 
-        if (floatVariable.RuntimeValue <= 0) {
-            Kill();
-        }
+        if (floatVariable.RuntimeValue <= 0) { Kill(); }
     }
 
     public void RestoreHealth(float restore)
@@ -36,6 +32,7 @@ public class HealthComponent : MonoBehaviour, IDamageable, IKillable
 
     public void Kill()
     {
+        // TODO make this with out the hard coded Destroy call;
         PlayEffect();
         Destroy(gameObject, 4);
     }

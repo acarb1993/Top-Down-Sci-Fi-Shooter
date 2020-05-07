@@ -46,7 +46,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 852180956057379129}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
@@ -112,7 +112,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyStats: {fileID: 11400000, guid: c3d8b651c13bfcd4b8fc9d35cf1b263d, type: 2}
-  wanderPoints: {fileID: 0}
 --- !u!114 &9123081621085138216
 MonoBehaviour:
   m_ObjectHideFlags: 0
