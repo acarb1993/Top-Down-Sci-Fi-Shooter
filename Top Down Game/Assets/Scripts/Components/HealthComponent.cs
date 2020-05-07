@@ -2,17 +2,21 @@
  * hit by attacks and abilities.
  */
 
+using System.Collections;
 using UnityEngine;
 
 public class HealthComponent : MonoBehaviour, IDamageable, IKillable
 {
     [SerializeField] private FloatVariable floatVariable;
+    [SerializeField] private Dissolve dissolveEffect;
 
     public void TakeDamage(float damage)
     {
         floatVariable.RuntimeValue -= damage;
 
-        if (floatVariable.RuntimeValue <= 0) { Kill(); }
+        if (floatVariable.RuntimeValue <= 0) {
+            Kill();
+        }
     }
 
     public void RestoreHealth(float restore)
@@ -22,8 +26,17 @@ public class HealthComponent : MonoBehaviour, IDamageable, IKillable
         if (floatVariable.RuntimeValue > floatVariable.InitialValue) { floatVariable.RuntimeValue = floatVariable.InitialValue; }
     }
 
+    public void PlayEffect()
+    {
+        if (dissolveEffect != null)
+        {
+            dissolveEffect.IsDissolving = true;
+        }
+    }
+
     public void Kill()
     {
-        Destroy(gameObject);
+        PlayEffect();
+        Destroy(gameObject, 4);
     }
 }
