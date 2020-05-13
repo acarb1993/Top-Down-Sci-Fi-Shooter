@@ -11,11 +11,9 @@ public class PlayerUI : MonoBehaviour
     [SerializeField]
     private Image radialHealthBar, radialStaminaBar;
 
-    [SerializeField]
-    private Text ammoCounter;
+    [SerializeField] private Text ammoCounter;
 
-    [SerializeField]
-    FloatVariable playerHealth, playerStamina;
+    [SerializeField] FloatVariable playerHealth, playerStamina;
 
     private WeaponContainer weaponContainer;
 
@@ -43,6 +41,6 @@ public class PlayerUI : MonoBehaviour
 
         radialStaminaBar.fillAmount = playerStamina.RuntimeValue / 100;
 
-        ammoCounter.text = weaponContainer.GetWeaponAtIndex(0).GetComponent<RangedWeapon>().CurrentAmmo.ToString();
+        ammoCounter.text = weaponContainer.CurrentWeapon.CurrentAmmo.ToString();
     }
 }

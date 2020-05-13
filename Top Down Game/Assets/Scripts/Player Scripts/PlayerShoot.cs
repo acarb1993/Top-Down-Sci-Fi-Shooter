@@ -2,17 +2,20 @@
 
 public class PlayerShoot : MonoBehaviour
 {
-    [SerializeField]
-    private WeaponContainer weaponContainer;
+    // A child that is on the player
+    [SerializeField] private WeaponContainer weaponContainer;
 
     // Update is called once per frame
     void Update()
     {
         if(Input.GetButton("Fire1") )
         {
-            // Get the first weapon in the weapon container to shoot
-            RangedWeapon weapon = weaponContainer.GetWeaponAtIndex(0);
-            weapon.Shoot();
+            weaponContainer.CurrentWeapon.Shoot();
         }
+    }
+
+    private void SwitchWeapon(int index)
+    {
+        weaponContainer.GetWeaponAtIndex(index);
     }
 }

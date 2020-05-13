@@ -21,14 +21,12 @@ public class RangedWeapon : MonoBehaviour
     private void Start()
     {
         timer = 0;
-
         CurrentAmmo = maxAmmo;
     }
 
-    void Update()
+    private void Update()
     {
-        // Timer limits the frequency at which the player can fire
-        if (timer > 0) { timer -= Time.deltaTime; }
+        if(timer > 0) { timer -= Time.deltaTime; }
     }
 
     public void Shoot()
