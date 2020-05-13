@@ -24,8 +24,6 @@ public class WeaponContainer : MonoBehaviour
 
     public RangedWeapon GetWeaponAtIndex(int index)
     {
-        Debug.Log("Dafuq?");
-
         // If an invalid selection happens, just return the current weapon
         if (index < 0 || index > weapons.Count)
         {
