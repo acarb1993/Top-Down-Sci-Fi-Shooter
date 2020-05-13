@@ -26,6 +26,12 @@ public class PlayerManager : MonoBehaviour
         if (Player == null) { Debug.Log("No Player Found in Player Manager"); }
     }
 
+    // Get the distance from an object to the player
+    public static float GetDistanceToPlayer(GameObject gameObject)
+    {
+        return Vector2.Distance(gameObject.transform.position, instance.Player.transform.position);
+    }
+
     #endregion
 }
 

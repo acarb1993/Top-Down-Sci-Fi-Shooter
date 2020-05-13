@@ -1,18 +1,20 @@
 ﻿/* Gives any character in the game Health, allows the character to take damage and be
  * hit by attacks and abilities.
  */
+using System.Collections;
 using UnityEngine;
 
 public class HealthComponent : MonoBehaviour, IDamageable, IKillable
 {
     [SerializeField] private FloatVariable floatVariable;
+    // Need to change later so not every object just dissolves
     [SerializeField] private Dissolve dissolveEffect;
 
     public void TakeDamage(float damage)
     {
         floatVariable.RuntimeValue -= damage;
 
-        if (floatVariable.RuntimeValue <= 0) { Kill(); }
+        if (floatVariable.RuntimeValue <= 0) { StartCoroutine(Kill() ); }
     }
 
     public void RestoreHealth(float restore)
@@ -22,18 +24,23 @@ public class HealthComponent : MonoBehaviour, IDamageable, IKillable
         if (floatVariable.RuntimeValue > floatVariable.InitialValue) { floatVariable.RuntimeValue = floatVariable.InitialValue; }
     }
 
-    public void PlayEffect()
+    // Plays a cool on death kill effect
+    public IEnumerator PlayEffect()
     {
         if (dissolveEffect != null)
         {
             dissolveEffect.IsDissolving = true;
+            while(dissolveEffect.IsDissolving)
+            {
+                yield return null;
+            }
         }
     }
 
-    public void Kill()
+    // Destroys object when the kill effect is done
+    public IEnumerator Kill()
     {
-        // TODO make this with out the hard coded Destroy call;
-        PlayEffect();
-        Destroy(gameObject, 4);
+        yield return StartCoroutine(PlayEffect());
+        Destroy(gameObject);
     }
 }

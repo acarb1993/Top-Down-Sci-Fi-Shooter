@@ -2,7 +2,9 @@
  * take damage but not necessarily be killed, such as a wall.
  */
 
+using System.Collections;
+
 public interface IKillable 
 {
-    void Kill();
+    IEnumerator Kill();
 }
