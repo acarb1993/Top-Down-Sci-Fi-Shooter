@@ -6,10 +6,6 @@ using UnityEngine;
 
 public abstract class Enemy : MonoBehaviour
 {
-    [SerializeField] private EnemyStats enemyStats;
-
-    private HealthComponent healthComponent;
-
     protected virtual void Start()
     {
         // Adds an enemy to a singleton on the Game Manager object in the scene
