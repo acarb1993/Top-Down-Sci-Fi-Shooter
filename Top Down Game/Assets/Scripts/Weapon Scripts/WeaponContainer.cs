@@ -3,29 +3,29 @@ using UnityEngine;
 
 public class WeaponContainer : MonoBehaviour
 {
-    private List<RangedWeapon> weapons;
+    public List<RangedWeapon> Weapons { get; private set; }
     public RangedWeapon CurrentWeapon { get; private set; }
 
     void Start()
     {
-        weapons = new List<RangedWeapon>();
+        Weapons = new List<RangedWeapon>();
 
         // Get each weapon in the container
         foreach (Transform child in transform)
         {
             RangedWeapon weapon = child.GetComponent<RangedWeapon>();
             weapon.gameObject.SetActive(false);
-            weapons.Add(weapon);
+            Weapons.Add(weapon);
         }
 
-        CurrentWeapon = weapons[0];
+        CurrentWeapon = Weapons[0];
         CurrentWeapon.gameObject.SetActive(true);
     }
 
     public RangedWeapon GetWeaponAtIndex(int index)
     {
         // If an invalid selection happens, just return the current weapon
-        if (index < 0 || index > weapons.Count)
+        if (index < 0 || index > Weapons.Count)
         {
             return CurrentWeapon;
         }
@@ -34,10 +34,10 @@ public class WeaponContainer : MonoBehaviour
         CurrentWeapon.gameObject.SetActive(false);
 
         // Activate the new weapon and deactivate the old one
-        weapons[index].gameObject.SetActive(true);
+        Weapons[index].gameObject.SetActive(true);
 
-        CurrentWeapon = weapons[index];
+        CurrentWeapon = Weapons[index];
 
-        return weapons[index];
+        return Weapons[index];
     }
 }

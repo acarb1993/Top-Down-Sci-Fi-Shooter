@@ -12,6 +12,21 @@ public class PlayerShoot : MonoBehaviour
         {
             weaponContainer.CurrentWeapon.Shoot();
         }
+
+        if(Input.GetButtonDown("Reload"))
+        {
+            weaponContainer.CurrentWeapon.Reload();
+        }
+
+        if(Input.GetKeyDown(KeyCode.Alpha1) )
+        {
+            SwitchWeapon(0);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            SwitchWeapon(1);
+        }
     }
 
     private void SwitchWeapon(int index)

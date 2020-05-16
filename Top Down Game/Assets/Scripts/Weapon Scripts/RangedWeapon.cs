@@ -2,18 +2,15 @@
 
 public class RangedWeapon : MonoBehaviour
 {
-    [SerializeField]
-    private Projectile projectile;
+    [SerializeField] private Projectile projectile;
 
-    [SerializeField]
-    private Transform firePoint;
+    [SerializeField] private Transform firePoint;
 
-    [SerializeField]
-    private int maxAmmo = 20;
+    [SerializeField] private int maxAmmo = 20;
     public int CurrentAmmo { get; private set; }
 
-    [SerializeField]
-    private float fireRate = 2, reloadSpeed = 5;
+    [SerializeField] private float fireRate = 2, reloadSpeed = 5;
+
     private float timer;
 
     private bool reloading = false;
