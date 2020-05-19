@@ -15,7 +15,7 @@ public class EnemyMovement : MonoBehaviour
     {
         rb2d = GetComponent<Rigidbody2D>();
         moveSpeed = floatVariable.RuntimeValue;
-        offset = 90;
+        offset = -90;
         StartPosition = transform.position;
     }
 
