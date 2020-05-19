@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3951cc7be6be8484abaa45e74bce07e9, type: 3}
   m_Name: Trident Projectile
   m_EditorClassIdentifier: 
-  pName: 
-  damage: 0
-  bulletVelocity: 0
-  despawnTime: 0
+  pName: TridentP
+  damage: 100
+  bulletVelocity: 20
+  despawnTime: 1

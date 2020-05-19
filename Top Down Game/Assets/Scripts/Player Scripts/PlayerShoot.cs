@@ -18,12 +18,12 @@ public class PlayerShoot : MonoBehaviour
             weaponContainer.CurrentWeapon.Reload();
         }
 
-        if(Input.GetKeyDown(KeyCode.Alpha1) )
+        if(Input.GetButtonDown("Weapon1") )
         {
             SwitchWeapon(0);
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        if (Input.GetButtonDown("Weapon2"))
         {
             SwitchWeapon(1);
         }

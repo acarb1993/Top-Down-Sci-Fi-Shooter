@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2041585290765535168}
   - component: {fileID: -6910783602085382873}
-  - component: {fileID: 1585205510063177454}
   - component: {fileID: 2900874140984484093}
+  - component: {fileID: 1585205510063177454}
   m_Layer: 0
   m_Name: Trident Projectile
   m_TagString: Untagged
@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3122848799276470126}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.695, y: -3.976, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 636717494919529965}
@@ -49,26 +49,12 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &1585205510063177454
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3122848799276470126}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f63cb23cea3a6246aa4de8441e42581, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectileStats: {fileID: 11400000, guid: e6bad782e5da64f4aac195137fcaa3b2, type: 2}
-  impact: {fileID: 0}
 --- !u!58 &2900874140984484093
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -82,9 +68,23 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0034082234, y: 0.0143117905}
+  m_Offset: {x: 0.000000014901161, y: 0.015141532}
   serializedVersion: 2
-  m_Radius: 0.114575654
+  m_Radius: 0.10567807
+--- !u!114 &1585205510063177454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3122848799276470126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f63cb23cea3a6246aa4de8441e42581, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectileStats: {fileID: 11400000, guid: e6bad782e5da64f4aac195137fcaa3b2, type: 2}
+  impact: {fileID: 7011091713025948093, guid: e48b9e03f4b4aba4aa640bbdf68b7e7d, type: 3}
 --- !u!1 &5603610528945420991
 GameObject:
   m_ObjectHideFlags: 0

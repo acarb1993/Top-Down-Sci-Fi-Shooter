@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class RangedWeapon : MonoBehaviour
 {
@@ -29,7 +30,7 @@ public class RangedWeapon : MonoBehaviour
     public void Shoot()
     {
         // Checks if the player can fire and if the weapon has ammo
-        if (timer <= 0 && CurrentAmmo > 0)
+        if (timer <= 0 && CurrentAmmo > 0 && !reloading)
         {        
             projectile.SpawnProjectile(firePoint);
 
@@ -37,18 +38,20 @@ public class RangedWeapon : MonoBehaviour
 
             timer = fireRate;
         }
+    }
 
-        // Auto reload if the weapon is out of ammo
-        if (CurrentAmmo <= 0 && !reloading) {
-            Debug.Log("Reloading...");
-            reloading = true;
-            Invoke("Reload", reloadSpeed);
-        }
+    public void Reload()
+    {
+        StartCoroutine(ReloadCommence() );
     }
 
     // Reloads this weapon
-    public void Reload()
+    public IEnumerator ReloadCommence()
     {
+        Debug.Log("Reloading");
+        reloading = true;
+
+        yield return new WaitForSeconds(reloadSpeed);
         CurrentAmmo = maxAmmo;
         reloading = false;
         Debug.Log("Reloaded");     
