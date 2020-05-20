@@ -6,9 +6,9 @@ using UnityEngine;
 
 public class HealthComponent : MonoBehaviour, IDamageable, IKillable
 {
-    [SerializeField] private FloatVariable floatVariable;
+    [SerializeField] private FloatVariable floatVariable = null;
     // Need to change later so not every object just dissolves
-    [SerializeField] private Dissolve dissolveEffect;
+    [SerializeField] private Dissolve dissolveEffect = null;
 
     public void TakeDamage(float damage)
     {

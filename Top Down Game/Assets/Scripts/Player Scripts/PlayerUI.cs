@@ -8,12 +8,13 @@ using UnityEngine.UI;
 
 public class PlayerUI : MonoBehaviour
 {
-    [SerializeField]
-    private Image radialHealthBar, radialStaminaBar;
+    [SerializeField] private Image radialHealthBar = null;
+    [SerializeField] private Image radialStaminaBar = null;
 
-    [SerializeField] private Text ammoCounter;
+    [SerializeField] private Text ammoCounter = null;
 
-    [SerializeField] FloatVariable playerHealth, playerStamina;
+    [SerializeField] FloatVariable playerHealth = null;
+    [SerializeField] FloatVariable playerStamina = null;
 
     private WeaponContainer weaponContainer;
 

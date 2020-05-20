@@ -18,26 +18,22 @@ public class ObjectPooler : MonoBehaviour
     [System.Serializable]
     private class Pool
     {
-        [SerializeField]
-        private string objectName;
+        [SerializeField] private string objectName = "";
 
         public string ObjectName { get { return objectName; } }
 
-        [SerializeField]
-        private GameObject prefab;
+        [SerializeField] private GameObject prefab = null;
 
         public GameObject Prefab { get { return prefab; } }
 
-        [SerializeField]
-        private int size;
+        [SerializeField] private int size = 0;
 
         public int Size { get { return size; } }
     }
 
     #endregion
 
-    [SerializeField]
-    private List<Pool> pools = new List<Pool>();
+    [SerializeField] private List<Pool> pools = new List<Pool>();
 
     private Dictionary<string, Queue<GameObject>> poolDictionary;
 

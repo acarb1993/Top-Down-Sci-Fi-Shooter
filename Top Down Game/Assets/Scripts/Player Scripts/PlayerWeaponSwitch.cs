@@ -2,7 +2,7 @@
 
 public class PlayerWeaponSwitch : MonoBehaviour
 {
-    [SerializeField] private WeaponContainer weaponContainer;
+    [SerializeField] private WeaponContainer weaponContainer = null;
 
     // Update is called once per frame
     void Update()

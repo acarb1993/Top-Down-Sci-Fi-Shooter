@@ -3,7 +3,7 @@
 public class PlayerShoot : MonoBehaviour
 {
     // A child that is on the player
-    [SerializeField] private WeaponContainer weaponContainer;
+    [SerializeField] private WeaponContainer weaponContainer = null;
 
     // Update is called once per frame
     void Update()

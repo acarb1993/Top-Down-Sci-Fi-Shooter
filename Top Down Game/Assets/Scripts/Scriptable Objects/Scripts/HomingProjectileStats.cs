@@ -7,8 +7,7 @@ public class HomingProjectileStats : ProjectileStats
 {
     // Rotate speed works better at higher numbers
     [Header("Homing Projectile Attribute")]
-    [SerializeField]
-    private float speed, rotateSpeed, range;
+    [SerializeField] private float speed, rotateSpeed, range;
 
     public float Speed { get { return speed; } }
     public float RotateSpeed { get { return rotateSpeed; } }

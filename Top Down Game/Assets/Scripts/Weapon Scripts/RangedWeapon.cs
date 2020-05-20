@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class RangedWeapon : MonoBehaviour
 {
-    [SerializeField] private Projectile projectile;
+    [SerializeField] private Projectile projectile = null;
 
-    [SerializeField] private Transform firePoint;
+    [SerializeField] private Transform firePoint = null;
 
     [SerializeField] private int maxAmmo = 20;
     public int CurrentAmmo { get; private set; }

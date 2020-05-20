@@ -2,7 +2,10 @@
 
 public class PlayerSprint : MonoBehaviour
 {
-    [SerializeField] private FloatVariable stamina, playerSpeed, sprintSpeed, sprintCost;
+    [SerializeField] private FloatVariable stamina = null; 
+    [SerializeField] private FloatVariable playerSpeed = null;
+    [SerializeField] private FloatVariable sprintSpeed = null;
+    [SerializeField] private FloatVariable sprintCost = null;
 
     // Needs to work with the Fixed Update in movement
     void FixedUpdate()

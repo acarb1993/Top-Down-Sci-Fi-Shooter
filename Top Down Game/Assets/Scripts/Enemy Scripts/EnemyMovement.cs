@@ -2,7 +2,7 @@
 
 public class EnemyMovement : MonoBehaviour
 {
-    [SerializeField] FloatVariable floatVariable;
+    [SerializeField] FloatVariable floatVariable = null;
 
     // Where the enemy is moving to
     private Rigidbody2D rb2d;

@@ -2,7 +2,7 @@
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] FloatVariable playerSpeed;
+    [SerializeField] FloatVariable playerSpeed = null;
 
     // Moves the player with the Unity physics engine
     private Rigidbody2D rb;

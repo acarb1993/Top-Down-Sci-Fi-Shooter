@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class StaminaComponent : MonoBehaviour
 {
-    [SerializeField] private FloatVariable stamina;
-    [SerializeField] private float recoveryAmount; 
+    [SerializeField] private FloatVariable stamina = null;
+    [SerializeField] private float recoveryAmount = 0f; 
 
     private void Update()
     {
