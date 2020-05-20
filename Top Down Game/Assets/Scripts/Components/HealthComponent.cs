@@ -13,7 +13,8 @@ public class HealthComponent : MonoBehaviour, IDamageable, IKillable
     private void OnEnable()
     {
         floatVariable.RuntimeValue = floatVariable.InitialValue;
-        dissolveEffect.resetFade();
+        if(dissolveEffect!= null) { dissolveEffect.resetFade(); }
+        
     }
 
     public void TakeDamage(float damage)
