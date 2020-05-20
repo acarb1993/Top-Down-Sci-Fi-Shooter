@@ -10,6 +10,12 @@ public class HealthComponent : MonoBehaviour, IDamageable, IKillable
     // Need to change later so not every object just dissolves
     [SerializeField] private Dissolve dissolveEffect = null;
 
+    private void OnEnable()
+    {
+        floatVariable.RuntimeValue = floatVariable.InitialValue;
+        dissolveEffect.resetFade();
+    }
+
     public void TakeDamage(float damage)
     {
         floatVariable.RuntimeValue -= damage;
@@ -41,6 +47,7 @@ public class HealthComponent : MonoBehaviour, IDamageable, IKillable
     public IEnumerator Kill()
     {
         yield return StartCoroutine(PlayEffect());
-        Destroy(gameObject);
+        // TODO enemies should go back into the spawn pool
+        gameObject.SetActive(false);
     }
 }

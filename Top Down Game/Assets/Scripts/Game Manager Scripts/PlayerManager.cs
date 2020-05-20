@@ -29,7 +29,12 @@ public class PlayerManager : MonoBehaviour
     // Get the distance from an object to the player
     public static float GetDistanceToPlayer(GameObject gameObject)
     {
-        return Vector2.Distance(gameObject.transform.position, instance.Player.transform.position);
+        if(gameObject.activeSelf)
+        {
+            return Vector2.Distance(gameObject.transform.position, instance.Player.transform.position);
+        }
+
+        return 0;
     }
 
     #endregion

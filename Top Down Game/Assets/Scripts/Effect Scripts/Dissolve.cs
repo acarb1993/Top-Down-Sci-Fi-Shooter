@@ -28,4 +28,9 @@ public class Dissolve : MonoBehaviour
 
         material.SetFloat("_Fade", fade);
     }
+
+    public void resetFade()
+    {
+        fade = 1f;
+    }
 }
