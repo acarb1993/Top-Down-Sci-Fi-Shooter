@@ -11,6 +11,11 @@ public class Drone : Enemy
         InitalizeStates();
     }
 
+    private void OnEnable()
+    {
+        
+    }
+
     protected override void Start() => base.Start();
 
     protected override void InitalizeStates()

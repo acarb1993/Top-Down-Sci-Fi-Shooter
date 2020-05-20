@@ -5,7 +5,7 @@ using UnityEngine;
 public class StaminaComponent : MonoBehaviour
 {
     [SerializeField] private FloatVariable stamina = null;
-    [SerializeField] private float recoveryAmount = 0f; 
+    [SerializeField] private FloatVariable recoveryAmount = null; 
 
     private void Update()
     {
@@ -16,6 +16,6 @@ public class StaminaComponent : MonoBehaviour
     private void RecoverStamina()
     {
         if (stamina.RuntimeValue < stamina.InitialValue)
-            stamina.RuntimeValue += recoveryAmount * Time.deltaTime;
+            stamina.RuntimeValue += recoveryAmount.RuntimeValue * Time.deltaTime;
     }
 }

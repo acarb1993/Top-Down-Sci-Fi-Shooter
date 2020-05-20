@@ -130,8 +130,8 @@ MonoBehaviour:
     type: 3}
   firePoint: {fileID: 9089205063887220884}
   maxAmmo: 5
-  fireRate: 4
-  reloadSpeed: 10
+  fireRate: 2
+  reloadSpeed: 6
 --- !u!1 &7806268192446065516
 GameObject:
   m_ObjectHideFlags: 0

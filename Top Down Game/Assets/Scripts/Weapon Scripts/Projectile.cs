@@ -6,7 +6,6 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     [SerializeField] protected ProjectileStats projectileStats = null;
-
     [SerializeField] protected GameObject impact = null;
 
     public ProjectileStats BulletStats { get { return projectileStats; } }

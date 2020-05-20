@@ -159,7 +159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stamina: {fileID: 11400000, guid: 6c08d712003ab254dae224b9b246478a, type: 2}
-  recoveryAmount: 2
+  recoveryAmount: {fileID: 11400000, guid: ec114e9bf2cf90f4384ecf9a4d7c8b89, type: 2}
 --- !u!114 &1577728705054842898
 MonoBehaviour:
   m_ObjectHideFlags: 0
