@@ -22,12 +22,12 @@ public class PlayerMovement : MonoBehaviour
         // GetAxisRaw() prevents smoothing of input. Will always be -1, 0, or 1
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
+        // Moves the rigid body based on key input
+        rb.MovePosition(rb.position + movement * playerSpeed.RuntimeValue * Time.fixedDeltaTime);
     }
 
-    // Use FixedUpdate to register the movement
-    private void FixedUpdate()
+    public void Walk()
     {
-        // Moves the rb to a new position and collides with anything along the way
-        rb.MovePosition(rb.position + movement * playerSpeed.RuntimeValue * Time.fixedDeltaTime);
+        playerSpeed.RuntimeValue = playerSpeed.InitialValue;
     }
 }

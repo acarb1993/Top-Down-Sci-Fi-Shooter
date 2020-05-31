@@ -41,13 +41,13 @@ GameObject:
   - component: {fileID: 216198281950767003}
   - component: {fileID: 216198281950767002}
   - component: {fileID: 216198281950767007}
+  - component: {fileID: 6873071848921528258}
   - component: {fileID: 216198281950767004}
   - component: {fileID: 1932822090613383684}
   - component: {fileID: 6909516137476794439}
   - component: {fileID: 1577728705054842898}
   - component: {fileID: 9179640774224437411}
   - component: {fileID: 2023476710610799793}
-  - component: {fileID: 8269343495423268990}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -120,6 +120,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6044699, y: 0.5655165}
   m_EdgeRadius: 0
+--- !u!114 &6873071848921528258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 216198281950767000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 210b29908c4311a438a8668fe8f89b49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponContainer: {fileID: 5513875488271219118}
 --- !u!114 &216198281950767004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,19 +219,6 @@ MonoBehaviour:
   playerSpeed: {fileID: 11400000, guid: 6adcbfd3a6e344746b9c12865edbbc9e, type: 2}
   sprintSpeed: {fileID: 11400000, guid: 44bda375b639f8449bd4c4d9c6a9743e, type: 2}
   sprintCost: {fileID: 11400000, guid: e1a46647393f59a4cbf117a0262b2273, type: 2}
---- !u!114 &8269343495423268990
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 216198281950767000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed251060fb2b5914b8f8e6b4add3c451, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponContainer: {fileID: 5513875488271219118}
 --- !u!1 &216198282223915674
 GameObject:
   m_ObjectHideFlags: 0
