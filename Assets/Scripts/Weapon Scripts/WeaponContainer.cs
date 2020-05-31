@@ -33,7 +33,7 @@ public class WeaponContainer : MonoBehaviour
         // Disable old weapon
         CurrentWeapon.gameObject.SetActive(false);
 
-        // Activate the new weapon and deactivate the old one
+        // Activate the new weapon
         Weapons[index].gameObject.SetActive(true);
 
         CurrentWeapon = Weapons[index];

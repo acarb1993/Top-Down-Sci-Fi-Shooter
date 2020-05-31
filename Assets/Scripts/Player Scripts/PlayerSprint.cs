@@ -9,8 +9,18 @@ public class PlayerSprint : MonoBehaviour
 
     public void Sprint()
     {
-        playerSpeed.RuntimeValue = sprintSpeed.RuntimeValue;
-        // Reduces stamin per second
-        stamina.RuntimeValue -= sprintCost.RuntimeValue * Time.deltaTime;
+        if(stamina.RuntimeValue >= 0)
+        {
+            playerSpeed.RuntimeValue = sprintSpeed.RuntimeValue;
+            // Reduces stamina per second
+            stamina.RuntimeValue -= sprintCost.RuntimeValue * Time.deltaTime;
+        }
+        
+        else { playerSpeed.RuntimeValue = playerSpeed.InitialValue; }
+    }
+
+    public void StopSprinting()
+    {
+        playerSpeed.RuntimeValue = playerSpeed.InitialValue;
     }
 }

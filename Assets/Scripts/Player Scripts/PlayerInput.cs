@@ -6,6 +6,7 @@ public class PlayerInput : MonoBehaviour
 
     private PlayerMovement playerMovement;
     private PlayerSprint playerSprint;
+    private Vector2 moveAxis;
 
     private void Start()
     {
@@ -13,8 +14,12 @@ public class PlayerInput : MonoBehaviour
         playerSprint = GetComponent<PlayerSprint>();
     }
 
+    // Use update for key inputs
     private void Update()
     {
+        // Reads the input of the direction the player is going
+        moveAxis = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+
         if (Input.GetButton("Fire1")) { weaponContainer.CurrentWeapon.Shoot(); }
 
         if (Input.GetButtonDown("Reload")) { weaponContainer.CurrentWeapon.Reload(); }
@@ -22,12 +27,15 @@ public class PlayerInput : MonoBehaviour
         if (Input.GetButtonDown("Weapon1")) { weaponContainer.GetWeaponAtIndex(0); }
 
         if (Input.GetButtonDown("Weapon2")) { weaponContainer.GetWeaponAtIndex(1); }
-    }
 
-    private void FixedUpdate()
-    {
         if (Input.GetButton("Run")) { playerSprint.Sprint(); }
 
-        else { playerMovement.Walk(); }
+        else if (Input.GetButtonUp("Run")) { playerSprint.StopSprinting(); }
+    }
+
+    // Use FixedUpdate for physics movement
+    private void FixedUpdate()
+    {
+        playerMovement.Move(moveAxis);
     }
 }
