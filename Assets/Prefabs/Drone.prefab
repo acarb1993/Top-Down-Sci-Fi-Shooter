@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 9031944191280377936}
   - component: {fileID: 6294010634249505791}
   - component: {fileID: 4430971124809921364}
+  - component: {fileID: 2742877997346641279}
   m_Layer: 0
   m_Name: Drone
   m_TagString: Enemy
@@ -167,6 +168,19 @@ MonoBehaviour:
   attackRange: 2
   damage: 10
   coolDown: 5
+--- !u!114 &2742877997346641279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 852180956057379129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76b9644b034fe654e938ff9531e5b75d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: -90
 --- !u!1 &4931846785176873700
 GameObject:
   m_ObjectHideFlags: 0

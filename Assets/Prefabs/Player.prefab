@@ -45,8 +45,8 @@ GameObject:
   - component: {fileID: 216198281950767004}
   - component: {fileID: 1932822090613383684}
   - component: {fileID: 6909516137476794439}
+  - component: {fileID: 3141846406794942757}
   - component: {fileID: 1577728705054842898}
-  - component: {fileID: 9179640774224437411}
   - component: {fileID: 2023476710610799793}
   m_Layer: 0
   m_Name: Player
@@ -173,6 +173,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stamina: {fileID: 11400000, guid: 6c08d712003ab254dae224b9b246478a, type: 2}
   recoveryAmount: {fileID: 11400000, guid: ec114e9bf2cf90f4384ecf9a4d7c8b89, type: 2}
+--- !u!114 &3141846406794942757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 216198281950767000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ffd31f0de359a9438c7ce422eac32e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerSpeed: {fileID: 11400000, guid: 6adcbfd3a6e344746b9c12865edbbc9e, type: 2}
 --- !u!114 &1577728705054842898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,19 +203,6 @@ MonoBehaviour:
   ammoCounter: {fileID: 8828724014726559001}
   playerHealth: {fileID: 11400000, guid: 9657d822206cff84bbcaced7a526225a, type: 2}
   playerStamina: {fileID: 11400000, guid: 6c08d712003ab254dae224b9b246478a, type: 2}
---- !u!114 &9179640774224437411
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 216198281950767000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 312d754ac482531429f3fe40d0d5e1ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerSpeed: {fileID: 11400000, guid: 6adcbfd3a6e344746b9c12865edbbc9e, type: 2}
 --- !u!114 &2023476710610799793
 MonoBehaviour:
   m_ObjectHideFlags: 0
