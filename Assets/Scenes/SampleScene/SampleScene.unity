@@ -426,7 +426,6 @@ MonoBehaviour:
   m_RequiresDepthTextureOption: 2
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
-  m_CameraOutput: 0
   m_Cameras: []
   m_RendererIndex: -1
   m_VolumeLayerMask:
@@ -438,6 +437,7 @@ MonoBehaviour:
   m_AntialiasingQuality: 2
   m_StopNaN: 0
   m_Dithering: 0
+  m_ClearDepth: 1
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
@@ -1681,7 +1681,6 @@ GameObject:
   - component: {fileID: 1206266794}
   - component: {fileID: 1206266796}
   - component: {fileID: 1206266797}
-  - component: {fileID: 1206266798}
   m_Layer: 0
   m_Name: GameManger
   m_TagString: Untagged
@@ -1751,18 +1750,6 @@ MonoBehaviour:
   - objectName: Drone
     prefab: {fileID: 852180956057379129, guid: 59894cb030bbddd4ca78f099fd2b052e, type: 3}
     size: 50
---- !u!114 &1206266798
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1206266793}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1ed2821c6926cb4b9df71d4282485b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1843980870
 GameObject:
   m_ObjectHideFlags: 0
