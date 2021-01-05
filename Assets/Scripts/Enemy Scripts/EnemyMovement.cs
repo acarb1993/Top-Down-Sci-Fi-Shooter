@@ -4,11 +4,11 @@ public class EnemyMovement : MonoBehaviour
 {
     [SerializeField] FloatVariable floatVariable = null;
 
-    // Where the enemy is moving to
     private Rigidbody2D rb2d;
     private float moveSpeed;
     
     public Vector3 StartPosition { get; private set; }
+    // Where the enemy is moving to
     public Vector3 TargetPosition { get; set; }
 
     void Start()

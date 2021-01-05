@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿/* Initalizes states and keeps track of enemy behaviour */
+
+using System.Collections.Generic;
 using System;
 
 public class Drone : Enemy
@@ -21,7 +23,8 @@ public class Drone : Enemy
         states = new Dictionary<Type, State>()
         {
             { typeof(WanderState), new WanderState(gameObject) },
-            { typeof(AggroState), new AggroState(gameObject) }
+            { typeof(AggroState), new AggroState(gameObject) },
+            { typeof(AttackState), new AttackState(gameObject) }
         };
 
         stateMachine.InitalizeStates(states);

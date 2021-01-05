@@ -27,14 +27,15 @@ public class WanderState : State
         float distanceToTarget = Vector3.Distance(gameObject.transform.position, enemyMovement.TargetPosition);
         float distanceToPlayer = PlayerManager.GetDistanceToPlayer(gameObject);
 
+        // Give a new target to go to, if not aggroed
         if(distanceToTarget < reachedPointDistance)
         {
             roamPosition = GetRoamingPosition();
             enemyMovement.TargetPosition = roamPosition;
         }
 
-        // if target is within range
-        if(enemyAggro.AggroDistance >= distanceToPlayer)
+        // if target is within range, start chasing
+        if(enemyAggro.AggroDistance > distanceToPlayer)
         {
             return typeof(AggroState);
         }
