@@ -27,6 +27,11 @@ public class EnemyManager : MonoBehaviour
 
     #endregion
 
+    private void Update()
+    {
+        spawnEnemy();
+    }
+
     private List<Enemy> list;
 
     private GameObject player;
@@ -36,4 +41,16 @@ public class EnemyManager : MonoBehaviour
     public void RemoveEnemy(Enemy e) { list.Remove(e); }
 
     public void ClearList() { list.Clear(); }
+
+    private void spawnEnemy()
+    {
+        // Spawns a drone at the mouse positon
+        //Just for testing purposes, will be re-done at some point
+        if(Input.GetKeyDown("space")) {
+            Vector3 mousePos = Input.mousePosition;
+            mousePos.z = Camera.main.nearClipPlane;
+            Vector3 worldPos = Camera.main.ScreenToWorldPoint(mousePos);
+            ObjectPooler.Instance.GetPooledObject("Drone", worldPos, new Quaternion(0, 0, 0, 0));
+        }
+    }
 }

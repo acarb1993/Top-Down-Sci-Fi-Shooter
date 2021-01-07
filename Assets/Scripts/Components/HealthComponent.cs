@@ -14,7 +14,6 @@ public class HealthComponent : MonoBehaviour, IDamageable, IKillable
     {
         floatVariable.RuntimeValue = floatVariable.InitialValue;
         if(dissolveEffect!= null) { dissolveEffect.resetFade(); }
-        
     }
 
     public void TakeDamage(float damage)
@@ -48,7 +47,6 @@ public class HealthComponent : MonoBehaviour, IDamageable, IKillable
     public IEnumerator Kill()
     {
         yield return StartCoroutine(PlayEffect());
-        // TODO enemies should go back into the spawn pool
         gameObject.SetActive(false);
     }
 }
