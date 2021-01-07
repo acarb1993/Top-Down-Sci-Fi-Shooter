@@ -5,17 +5,21 @@ public class AttackState : State
 {
     private AttackMove attackMove;
     private EnemyAggro enemyAggro;
+    private FaceTarget faceTarget;
     private float timer;
 
     public AttackState(GameObject gameObject) : base(gameObject)
     {
-        enemyAggro = gameObject.GetComponent<EnemyAggro>();
         attackMove = gameObject.GetComponent<AttackMove>();
+        enemyAggro = gameObject.GetComponent<EnemyAggro>();
+        faceTarget = gameObject.GetComponent<FaceTarget>();
         timer = 0;
     }
 
     public override Type Tick()
     {
+        faceTarget.Target = PlayerManager.Instance.Player.transform.position;
+
         // Keep track of the cooldown
         if (timer > 0)
         {

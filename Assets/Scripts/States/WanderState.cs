@@ -6,6 +6,7 @@ public class WanderState : State
 {
     private EnemyAggro enemyAggro;
     private EnemyMovement enemyMovement;
+    private FaceTarget faceTaget;
 
     private Vector3 startingPosition;
     private Vector3 roamPosition;
@@ -14,11 +15,15 @@ public class WanderState : State
     {
         enemyAggro = gameObject.GetComponent<EnemyAggro>();
         enemyMovement = gameObject.GetComponent<EnemyMovement>();
+        faceTaget = gameObject.GetComponent<FaceTarget>();
 
         startingPosition = enemyMovement.StartPosition;
         roamPosition = GetRoamingPosition();
 
         enemyMovement.TargetPosition = roamPosition;
+        faceTaget.Target = roamPosition;
+
+        updateTargets();
     }
 
     public override Type Tick()
@@ -31,7 +36,7 @@ public class WanderState : State
         if(distanceToTarget < reachedPointDistance)
         {
             roamPosition = GetRoamingPosition();
-            enemyMovement.TargetPosition = roamPosition;
+            updateTargets();
         }
 
         // if target is within range, start chasing
@@ -53,5 +58,11 @@ public class WanderState : State
     private Vector3 GetRoamingPosition()
     {
         return startingPosition + GetRandomDirection() * UnityEngine.Random.Range(1f, 5f);
+    }
+
+    private void updateTargets()
+    {
+        enemyMovement.TargetPosition = roamPosition;
+        faceTaget.Target = roamPosition;
     }
 }
