@@ -4,13 +4,10 @@ using UnityEngine;
 public class RangedWeapon : MonoBehaviour
 {
     [SerializeField] private Projectile projectile = null;
-
     [SerializeField] private Transform firePoint = null;
-
     [SerializeField] private int maxAmmo = 20;
-    public int CurrentAmmo { get; private set; }
-
     [SerializeField] private float fireRate = 2, reloadSpeed = 5;
+    public int CurrentAmmo { get; private set; }
 
     private float timer;
 
@@ -42,7 +39,7 @@ public class RangedWeapon : MonoBehaviour
 
     public void Reload()
     {
-        StartCoroutine(ReloadCommence() );
+        if(!reloading && CurrentAmmo != maxAmmo) { StartCoroutine(ReloadCommence()); }
     }
 
     // Reloads this weapon

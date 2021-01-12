@@ -1,18 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private int biomassCount;
     void Start()
     {
-        
+        biomassCount = 0;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void addToBiomass()
     {
-        
+        biomassCount++;
+        Debug.Log(biomassCount);
     }
 }

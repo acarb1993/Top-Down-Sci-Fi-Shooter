@@ -11,8 +11,9 @@ public class Biomass : MonoBehaviour, IPickupable
         ObjectPooler.Instance.GetPooledObject(pName, spawnPoint.transform.position, spawnPoint.transform.rotation);
     }
 
-    public void onPickup()
+    public void onPickup(Inventory inv)
     {
+        inv.addToBiomass();
         gameObject.SetActive(false);
     }
 }
