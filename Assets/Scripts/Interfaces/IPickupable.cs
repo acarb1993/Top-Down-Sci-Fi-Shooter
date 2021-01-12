@@ -1,5 +1,7 @@
+using UnityEngine;
 
 public interface IPickupable
 {
-    void onPickup(); 
+    public void Spawn(Transform spawnPoint);
+    public void onPickup(); 
 }

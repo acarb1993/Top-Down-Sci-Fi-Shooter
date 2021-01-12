@@ -2,23 +2,17 @@ using UnityEngine;
 
 public class Biomass : MonoBehaviour, IPickupable
 {
-    void Start()
-    {
-        
-    }
+    [SerializeField] private string pName = "";
 
-    void Update()
+    void onEnable() {}
+
+    public void Spawn(Transform spawnPoint)
     {
-        
+        ObjectPooler.Instance.GetPooledObject(pName, spawnPoint.transform.position, spawnPoint.transform.rotation);
     }
 
     public void onPickup()
     {
-        
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        Debug.Log(collision);
+        gameObject.SetActive(false);
     }
 }

@@ -1,14 +1,14 @@
-﻿/* Gives any character in the game Health, allows the character to take damage and be
- * hit by attacks and abilities.
- */
+﻿// Gives any character in the game Health, allows the character to take damage and be hit by attacks and abilities.
+
 using System.Collections;
 using UnityEngine;
 
 public class HealthComponent : MonoBehaviour, IDamageable, IKillable
 {
     [SerializeField] private FloatVariable floatVariable = null;
-    // Need to change later so not every object just dissolves
+    // TODO Need to change later so not every object just dissolves
     [SerializeField] private Dissolve dissolveEffect = null;
+    [SerializeField] private GameObject droppedItem = null;
 
     private void OnEnable()
     {
@@ -47,6 +47,10 @@ public class HealthComponent : MonoBehaviour, IDamageable, IKillable
     public IEnumerator Kill()
     {
         yield return StartCoroutine(PlayEffect());
+        if(droppedItem != null) {
+            IPickupable pickup = droppedItem.GetComponent<IPickupable>();
+            pickup.Spawn(gameObject.transform); 
+        }
         gameObject.SetActive(false);
     }
 }

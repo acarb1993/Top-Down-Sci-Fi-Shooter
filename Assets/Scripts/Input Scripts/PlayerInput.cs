@@ -38,4 +38,14 @@ public class PlayerInput : MonoBehaviour
     {
         playerMovement.Move(moveAxis);
     }
+
+    // Automatically get pickups when dropped by enemies
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        IPickupable pickup = collision.GetComponent<IPickupable>();
+        if(pickup != null)
+        {
+            pickup.onPickup();
+        }
+    }
 }

@@ -101,6 +101,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floatVariable: {fileID: 11400000, guid: 46263dd8fceb5d149a7a0ceadf296248, type: 2}
   dissolveEffect: {fileID: 956174754574276737}
+  droppedItem: {fileID: 7462344577695924758, guid: 873cb54b05dcd204199f8bdf03c04cce,
+    type: 3}
 --- !u!114 &5704972260979641844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -271,6 +273,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
