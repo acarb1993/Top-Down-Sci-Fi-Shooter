@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7462344577249149344}
   - component: {fileID: 7462344577249149345}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 7462344577695924756}
   - component: {fileID: 7462344577695924759}
   - component: {fileID: 7462344577695924757}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Biomass
   m_TagString: Untagged
   m_Icon: {fileID: 0}

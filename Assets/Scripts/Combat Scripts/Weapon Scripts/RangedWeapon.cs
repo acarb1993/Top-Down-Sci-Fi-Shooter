@@ -15,11 +15,14 @@ public class RangedWeapon : MonoBehaviour
 
     private bool reloading = false;
 
+    private float volume;
+
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
         timer = 0;
         CurrentAmmo = maxAmmo;
+        volume = 0.5f;
     }
 
     private void Update()
@@ -33,7 +36,7 @@ public class RangedWeapon : MonoBehaviour
         if (timer <= 0 && CurrentAmmo > 0 && !reloading)
         {        
             projectile.SpawnProjectile(firePoint);
-            audioSource.PlayOneShot(audioSource.clip, 0.5f);
+            audioSource.PlayOneShot(audioSource.clip, volume);
 
             CurrentAmmo--;
 

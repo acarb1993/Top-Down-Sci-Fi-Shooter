@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5163984481653707403}
   - component: {fileID: 4460461025173825215}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,6 +46,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -93,7 +94,7 @@ GameObject:
   - component: {fileID: 7009741041356605937}
   - component: {fileID: 4199807951749913711}
   - component: {fileID: 1708986617437632158}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Laser Bullet
   m_TagString: Laser Bullet
   m_Icon: {fileID: 0}

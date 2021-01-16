@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: -6910783602085382873}
   - component: {fileID: 2900874140984484093}
   - component: {fileID: 1585205510063177454}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Trident Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   m_Component:
   - component: {fileID: 636717494919529965}
   - component: {fileID: 5183012135367254931}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -131,6 +131,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
