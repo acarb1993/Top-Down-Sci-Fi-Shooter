@@ -7,6 +7,8 @@ public class RangedWeapon : MonoBehaviour
     [SerializeField] private Transform firePoint = null;
     [SerializeField] private int maxAmmo = 20;
     [SerializeField] private float fireRate = 2, reloadSpeed = 5;
+
+    private AudioSource audioSource;
     public int CurrentAmmo { get; private set; }
 
     private float timer;
@@ -15,6 +17,7 @@ public class RangedWeapon : MonoBehaviour
 
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         timer = 0;
         CurrentAmmo = maxAmmo;
     }
@@ -30,6 +33,7 @@ public class RangedWeapon : MonoBehaviour
         if (timer <= 0 && CurrentAmmo > 0 && !reloading)
         {        
             projectile.SpawnProjectile(firePoint);
+            audioSource.PlayOneShot(audioSource.clip, 0.5f);
 
             CurrentAmmo--;
 
