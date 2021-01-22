@@ -14,7 +14,7 @@ public class PickupItem : MonoBehaviour
         IPickupable pickup = collision.GetComponent<IPickupable>();
         if (pickup != null)
         {
-            pickup.onPickup(inv);
+            pickup.OnPickup(inv);
         }
     }
 }
