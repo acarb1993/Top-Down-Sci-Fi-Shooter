@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿ using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
 {
@@ -7,11 +7,13 @@ public class PlayerInput : MonoBehaviour
     private PlayerMovement playerMovement;
     private PlayerSprint playerSprint;
     private Vector2 moveAxis;
+    private Interact interact;
 
     private void Start()
     {
         playerMovement = GetComponent<PlayerMovement>();
         playerSprint = GetComponent<PlayerSprint>();
+        interact = GetComponent<Interact>();
     }
 
     // Use update for key inputs
@@ -29,6 +31,8 @@ public class PlayerInput : MonoBehaviour
         if (Input.GetButtonDown("Weapon2")) { weaponContainer.GetWeaponAtIndex(1); }
 
         if (Input.GetButton("Run")) { playerSprint.Sprint(); }
+
+        if(Input.GetButtonDown("Interact") && interact.Interactable != null) { interact.InteractWithTarget(); }
 
         else if (Input.GetButtonUp("Run")) { playerSprint.StopSprinting(); }
     }

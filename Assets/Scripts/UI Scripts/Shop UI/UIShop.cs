@@ -6,12 +6,14 @@ using TMPro;
 public class UIShop : MonoBehaviour
 {
     [SerializeField] private List<GameObject> items;
+    private List<Transform> itemButtons;
     private Transform container;
     private Transform shopItemTemplate;
     private float offset;
 
     private void Awake()
     {
+        itemButtons = new List<Transform>();
         container = transform.Find("Container");
         shopItemTemplate = container.Find("Shop Item");
         // Stays hidden until activated
@@ -30,13 +32,28 @@ public class UIShop : MonoBehaviour
             string name = itemObject.name;
             // TODO give items an actual cost
             int cost = 100;
-            CreateItemButton(sprite, name, cost, i);
-            
+            Transform button = CreateItemButton(sprite, name, cost, i);
+            itemButtons.Add(button);
+        }
+    }
+
+    public void ShowShop()
+    {
+        foreach(Transform t in itemButtons) {
+            t.gameObject.SetActive(true);
+        }
+    }
+
+    public void HideShop()
+    {
+        foreach (Transform t in itemButtons)
+        {
+            t.gameObject.SetActive(false);
         }
     }
 
     // Create a new shop item to list in the UI
-    private void CreateItemButton(Sprite sprite, string name, int cost, int posIndex)
+    private Transform CreateItemButton(Sprite sprite, string name, int cost, int posIndex)
     {
         Transform shopItemTransform = Instantiate(shopItemTemplate, container);
         RectTransform shopItemRectTransform = shopItemTransform.GetComponent<RectTransform>();
@@ -48,5 +65,7 @@ public class UIShop : MonoBehaviour
         shopItemTransform.Find("Item Text").GetComponent<TextMeshProUGUI>().SetText(name);
         shopItemTransform.Find("Price Text").GetComponent<TextMeshProUGUI>().SetText(cost.ToString() );
         shopItemTransform.Find("Item Icon").GetComponent<Image>().sprite = sprite;
+
+        return shopItemTransform;
     }
 }
