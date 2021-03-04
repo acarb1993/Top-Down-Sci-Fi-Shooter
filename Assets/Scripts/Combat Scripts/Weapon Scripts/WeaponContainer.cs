@@ -13,13 +13,17 @@ public class WeaponContainer : MonoBehaviour
         // Get each weapon in the container
         foreach (Transform child in transform)
         {
-            RangedWeapon weapon = child.GetComponent<RangedWeapon>();
-            weapon.gameObject.SetActive(false);
-            Weapons.Add(weapon);
+            if (child.childCount > 0)
+            {
+                RangedWeapon weapon = child.GetChild(0).GetComponent<RangedWeapon>();
+                weapon.gameObject.SetActive(false);
+                Weapons.Add(weapon);
+            }
         }
 
         CurrentWeapon = Weapons[0];
         CurrentWeapon.gameObject.SetActive(true);
+        Debug.Log(CurrentWeapon);
     }
 
     public RangedWeapon GetWeaponAtIndex(int index)

@@ -22,7 +22,7 @@ public class PlayerInput : MonoBehaviour
         // Reads the input of the direction the player is going
         moveAxis = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
-        if (Input.GetButton("Fire1")) { weaponContainer.CurrentWeapon.Shoot(); }
+        if (Input.GetButton("Fire1") && weaponContainer.CurrentWeapon != null) { weaponContainer.CurrentWeapon.Shoot(); }
 
         if (Input.GetButtonDown("Reload")) { weaponContainer.CurrentWeapon.Reload(); }
 

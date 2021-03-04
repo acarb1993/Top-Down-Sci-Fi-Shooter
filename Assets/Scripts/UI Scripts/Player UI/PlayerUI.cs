@@ -42,6 +42,8 @@ public class PlayerUI : MonoBehaviour
 
         radialStaminaBar.fillAmount = playerStamina.RuntimeValue / 100;
 
-        ammoCounter.text = weaponContainer.CurrentWeapon.CurrentAmmo.ToString();
+        RangedWeapon rangedWeapon = weaponContainer.CurrentWeapon;
+        if(rangedWeapon != null) { ammoCounter.text = rangedWeapon.CurrentAmmo.ToString(); }
+        
     }
 }
